@@ -6,7 +6,6 @@ import reduxThunk from "redux-thunk";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import reducer from "./store/reducers";
-import { BrowserRouter } from "react-router-dom";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -16,9 +15,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
       <App />
-    </BrowserRouter>
   </Provider>,
   document.getElementById("root")
 );

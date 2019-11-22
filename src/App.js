@@ -6,6 +6,7 @@ import { HomePage } from "./views/HomePage";
 import { CohortPage } from "./views/CohortPage";
 import { Header } from "./components/Header/Header";
 import { Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   //TODO remove comment on useEffect
@@ -16,12 +17,14 @@ function App() {
   //   fetchData();
   // });
   return (
-    <div className="App">
-      <Header />
-      <Route exact path="/" component={HomePage} />
-      <Route exact path="/home" component={HomePage} />
-      <Route exact path="/cohorts/:id" component={CohortPage} />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/home" component={HomePage} />
+        <Route exact path="/cohorts/:id" component={CohortPage} />
+      </div>
+    </BrowserRouter>
   );
 }
 
