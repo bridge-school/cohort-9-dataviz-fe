@@ -1,0 +1,21 @@
+$font-stack: "Open Sans", sans-serif;
+$primary-color: rgb(53, 53, 53);
+
+// colors used in bridge logo:
+// blue-purple: rgb(78, 87, 202), aqua: rgb(47, 161, 212), blue: rgb(0, 12, 158), pink: rgb(235, 44, 151), green: rgb(8, 195, 157)
+html,
+body {
+  margin: 0;
+  height: 100%;
+  padding: 0;
+}
+
+.App {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+.header {
+  width: 100%;
+  height: 8vh;
+}

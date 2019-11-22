@@ -1,31 +1,26 @@
 import React, { useEffect } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
+
 import { request } from "./backend-request";
+import { HomePage } from "./views/HomePage";
+import { CohortPage } from "./views/CohortPage";
+import { Header } from "./components/Header/Header";
+import { Route } from "react-router-dom";
 
 function App() {
-  useEffect(() => {
-    const fetchData = async () => {
-      return await request("health");
-    };
-    fetchData();
-  });
+  //TODO remove comment on useEffect
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     return await request("health");
+  //   };
+  //   fetchData();
+  // });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Route exact path="/" component={HomePage} />
+      <Route exact path="/home" component={HomePage} />
+      <Route exact path="/cohorts/:id" component={CohortPage} />
     </div>
   );
 }
