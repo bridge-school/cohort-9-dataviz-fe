@@ -1,5 +1,7 @@
 import React from "react";
 import CohortListItem from "../CohortListItem/CohortListItem";
+import {List} from "./CohortListStyle";
+
 
 
 export const CohortList = ({cohorts}) => {
@@ -10,9 +12,9 @@ export const CohortList = ({cohorts}) => {
 
   return (
     <div>
-        <ul>
+        <List>
 {cohortsItems}
-        </ul>
+        </List>
     
     </div>
   );

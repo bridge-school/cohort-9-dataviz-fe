@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
+import {ListItem} from './CohortListItemStyle';
 
 const CohortListItem = ({cohortID, key}) => {
     return(
-        <li key={key}><Link to={`/cohorts/${cohortID}`}>{cohortID}</Link></li>
+        <ListItem key={key}><Link to={`/cohorts/${cohortID}`}>{cohortID}</Link></ListItem>
     )
 }
 
