@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import GlobalStyle from "./GlobalStyle";
 
-import { request } from "./backend-request";
+//import { request } from "./backend-request";
 import { HomePage } from "./views/HomePage";
 import { CohortPage } from "./views/CohortPage";
 import { Header } from "./components/Header/Header";
