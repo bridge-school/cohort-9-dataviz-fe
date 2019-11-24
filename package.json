@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=10.15"
+    "node": ">=12.13.1"
   },
   "dependencies": {
     "fsevents": "^2.1.2",
