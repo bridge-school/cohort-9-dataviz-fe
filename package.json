@@ -2,6 +2,9 @@
   "name": "frontend-starter",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=10.15"
+  },
   "dependencies": {
     "fsevents": "^2.1.2",
     "node-sass": "^4.13.0",
