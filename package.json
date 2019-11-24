@@ -6,7 +6,6 @@
     "node": ">=12.13.1"
   },
   "dependencies": {
-    "fsevents": "^2.1.2",
     "node-sass": "^4.13.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
