@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./App.scss";
+import GlobalStyle from "./GlobalStyle";
 
 import { request } from "./backend-request";
 import { HomePage } from "./views/HomePage";
@@ -19,8 +19,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header /> 
-          {/*TODO: add defaut route*/}
+        <GlobalStyle />
+        <Header />
+        {/*TODO: add defaut route*/}
         <Route exact path="/" component={HomePage} />
         <Route exact path="/home" component={HomePage} />
         <Route exact path="/cohorts/:id" component={CohortPage} />

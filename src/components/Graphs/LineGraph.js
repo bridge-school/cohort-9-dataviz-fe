@@ -1,5 +1,6 @@
 import React from "react";
+import {LineGraphStyle} from "./LineGraphStyle";
 
 export const LineGraph = () => {
-  return <div className="line-graph"> This is a div for Line Graph </div>;
+  return <LineGraphStyle className="line-graph"> This is a div for Line Graph </LineGraphStyle>;
 };

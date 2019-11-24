@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 export const HeaderStyle = styled.header`
@@ -7,4 +6,6 @@ export const HeaderStyle = styled.header`
   align-items: center;
   color: white;
   background-color: rgb(78, 87, 202);
+  width: 100%;
+  height: 8vh;
 `;

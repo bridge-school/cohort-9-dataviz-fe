@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../../bridgeLogo.svg";
-import styled from "styled-components";
 import {HeaderStyle} from "./HeaderStyle";
 import {LogoStyle} from "./LogoStyle";
 

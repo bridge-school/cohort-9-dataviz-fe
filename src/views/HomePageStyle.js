@@ -1,12 +1,9 @@
-.home-page {
+import styled from "styled-components";
+
+export const HomePagePageStyle = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0em 2em;
   height: 100vh;
   background-color: rgb(166, 204, 247);
-
-  .line-graph {
-    align-self: center;
-    background-color: darkcyan;
-  }
-}
+`;
