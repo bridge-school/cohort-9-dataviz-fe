@@ -7,7 +7,8 @@ import { CohortList } from '../components/CohortList/CohortList';
 import { LineGraph } from '../components/Graphs/LineGraph';
 import { HomePageStyle } from './HomePageStyle';
 
-const HomePage = ({ fetchCohorts }) => {
+// TODO: change name before PR
+const View = ({ fetchCohorts }) => {
   const [cohorts, setCohorts] = useState([]);
 
   useEffect(() => {
@@ -29,7 +30,4 @@ const mapDispatchToProps = dispatch => ({
   fetchCohorts: () => dispatch(fetchCohortsThunk())
 });
 
-export const HomePageContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HomePage);
+export const HomePage = connect(mapStateToProps, mapDispatchToProps)(View);
