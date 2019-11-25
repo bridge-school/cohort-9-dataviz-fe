@@ -1,16 +1,14 @@
 //This is a file for the home page
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+
 import { fetchCohortsThunk } from '../store/actions/cohorts.actions';
 import { Title } from '../components/Title/Title';
 import { CohortList } from '../components/CohortList/CohortList';
 import { LineGraph } from '../components/Graphs/LineGraph';
 import { HomePageStyle } from './HomePageStyle';
 
-// TODO: change name before PR
-const View = ({ fetchCohorts }) => {
-  const [cohorts, setCohorts] = useState([]);
-
+const HomePageComponent = ({ cohorts, fetchCohorts }) => {
   useEffect(() => {
     fetchCohorts();
   }, [fetchCohorts]);
@@ -18,16 +16,21 @@ const View = ({ fetchCohorts }) => {
   return (
     <HomePageStyle>
       <Title />
-      <CohortList />
+      <CohortList cohorts={cohorts} />
       <LineGraph />
     </HomePageStyle>
   );
 };
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  cohorts: state.allCohorts.cohortApplicants
+});
 
 const mapDispatchToProps = dispatch => ({
   fetchCohorts: () => dispatch(fetchCohortsThunk())
 });
 
-export const HomePage = connect(mapStateToProps, mapDispatchToProps)(View);
+export const HomePage = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomePageComponent);
