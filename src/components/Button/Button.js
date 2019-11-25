@@ -1,5 +1,5 @@
 import React from "react";
 
 export const Button = () => {
-    return <div className="button"> <button type="button">Click me!</button></div>
+    return <div> <button type="button">Click me!</button></div>
 }

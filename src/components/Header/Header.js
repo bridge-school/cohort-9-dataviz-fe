@@ -7,8 +7,8 @@ import {LogoStyle} from "./LogoStyle";
 
 export const Header = () => {
   return (
-    <HeaderStyle className="header">
-      <LogoStyle className="logo" src={logo} alt="Logo" />
+    <HeaderStyle>
+      <LogoStyle src={logo} alt="Logo" />
       Cohort Application Data
     </HeaderStyle>
   );

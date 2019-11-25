@@ -4,7 +4,7 @@ import { SidebarStyle } from "./SidebarStyle";
 
 export const Sidebar = () => {
   return (
-    <SidebarStyle className="sidebar">
+    <SidebarStyle>
       <Button />
       <Button />
       <Button />

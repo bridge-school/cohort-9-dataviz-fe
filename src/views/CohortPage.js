@@ -9,9 +9,9 @@ import { GraphSectionStyle } from "./GraphSectionStyle";
 
 export const CohortPage = props => {
   return (
-    <CohortPageStyle className="cohort-page">
+    <CohortPageStyle>
       <Sidebar />
-      <GraphSectionStyle className="graph-section">
+      <GraphSectionStyle>
         <Title />
         <BarGraph />
       </GraphSectionStyle>

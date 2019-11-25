@@ -3,14 +3,14 @@ import React from "react";
 import { Title } from "../components/Title/Title";
 import { CohortList } from "../components/CohortList/CohortList";
 import { LineGraph } from "../components/Graphs/LineGraph";
-import {HomePagePageStyle} from "./HomePageStyle";
+import {HomePageStyle} from "./HomePageStyle";
 
 export const HomePage = () => {
   return (
-    <HomePagePageStyle className="home-page">
+    <HomePageStyle>
       <Title />
       <CohortList />
       <LineGraph />
-    </HomePagePageStyle>
+    </HomePageStyle>
   );
 };
