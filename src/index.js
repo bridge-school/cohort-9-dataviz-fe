@@ -1,12 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { applyMiddleware, createStore, compose } from 'redux';
-import { Provider } from 'react-redux';
-import reduxThunk from 'redux-thunk';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import reducer from './store/reducers';
+import React from "react";
+import ReactDOM from "react-dom";
+import { applyMiddleware, createStore, compose } from "redux";
+import { Provider } from "react-redux";
+import reduxThunk from "redux-thunk";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import reducer from "./store/reducers";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -16,9 +15,9 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+      <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
