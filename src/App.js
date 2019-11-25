@@ -1,21 +1,14 @@
-import React, { useEffect } from "react";
-import GlobalStyle from "./GlobalStyle";
+import React from 'react';
+import GlobalStyle from './GlobalStyle';
 
 //import { request } from "./backend-request";
-import { HomePage } from "./views/HomePage";
-import { CohortPage } from "./views/CohortPage";
-import { Header } from "./components/Header/Header";
-import { Route } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
+import { Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { HomePage } from './views/HomePage';
+import { CohortPage } from './views/CohortPage';
+import { Header } from './components/Header/Header';
 
 function App() {
-  //TODO remove comment on useEffect
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     return await request("health");
-  //   };
-  //   fetchData();
-  // });
   return (
     <BrowserRouter>
       <div className="App">
