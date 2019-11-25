@@ -1,6 +1,11 @@
+//This is a file for the home page
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchCohortsThunk } from '../store/actions/cohorts.actions';
+import { Title } from '../components/Title/Title';
+import { CohortList } from '../components/CohortList/CohortList';
+import { LineGraph } from '../components/Graphs/LineGraph';
+import { HomePageStyle } from './HomePageStyle';
 
 const HomePage = ({ fetchCohorts }) => {
   const [cohorts, setCohorts] = useState([]);
@@ -9,7 +14,13 @@ const HomePage = ({ fetchCohorts }) => {
     fetchCohorts();
   }, [fetchCohorts]);
 
-  return <div></div>;
+  return (
+    <HomePageStyle>
+      <Title />
+      <CohortList />
+      <LineGraph />
+    </HomePageStyle>
+  );
 };
 
 const mapStateToProps = state => ({});
@@ -18,4 +29,7 @@ const mapDispatchToProps = dispatch => ({
   fetchCohorts: () => dispatch(fetchCohortsThunk())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export const HomePageContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomePage);
