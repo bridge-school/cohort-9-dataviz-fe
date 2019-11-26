@@ -1,11 +1,18 @@
 import React from "react";
+import CohortListItem from "../CohortListItem/CohortListItem";
+import { List } from "./CohortListStyle";
 
-export const CohortList = () => {
-    return <div>
-        <ul>
-            <li> Cohort 3 </li>
-            <li> Cohort 2 </li>
-            <li> Cohort 1 </li>
-        </ul>
+export const CohortList = ({ cohorts }) => {
+  const cohortsIdList = Object.keys(cohorts);
+  const cohortsItems = cohortsIdList.map((cohortID, index) =>
+    <CohortListItem cohortID={cohortID} key={cohortID + index} />
+  );
+
+  return (
+    <div>
+      <List>
+        {cohortsItems}
+      </List>
     </div>
+  );
 };
