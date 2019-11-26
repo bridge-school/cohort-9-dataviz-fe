@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { COHORTS } from './actions.type';
 
-const setCohortsData = (cohorts = {}) => ({
+export const setCohortsData = (cohorts = {}) => ({
   type: COHORTS.SET_DATA,
   payload: cohorts
 });
