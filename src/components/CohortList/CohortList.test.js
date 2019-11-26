@@ -2,7 +2,7 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 import { CohortList } from "./CohortList";
 import CohortListItem from "../CohortListItem/CohortListItem";
-import { Router, withRouter, MemoryRouter } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 
 describe("CohortList component test with Enzyme", () => {
   it("renders without crashing", () => {
