@@ -5,19 +5,18 @@ import { CohortList } from "../components/CohortList/CohortList";
 import { LineGraph } from "../components/Graphs/LineGraph";
 import {HomePageStyle} from "./HomePageStyle";
 
-
+//temp api result for cohorts
 const cohorts = {
   "cohort-8": 43,
   "cohort-6": 43,
   "cohort-7": 44
 };
 
-
 export const HomePage = () => {
   return (
     <HomePageStyle>
       <Title />
-      <CohortList cohorts={cohorts}/>
+      <CohortList cohorts={cohorts} />
       <LineGraph />
     </HomePageStyle>
   );

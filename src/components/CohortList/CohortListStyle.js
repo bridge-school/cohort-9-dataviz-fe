@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-
 export const List = styled.ul`
   list-style: none;
   padding: 0px 20px;
@@ -11,4 +10,3 @@ export const List = styled.ul`
   border-top: 3px solid blue;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16);
 `;
-
