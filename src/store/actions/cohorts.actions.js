@@ -7,5 +7,7 @@ export const setCohortsData = (cohorts = {}) => ({
 });
 
 export const fetchCohortsThunk = () => dispatch => {
-  axios.get('/cohorts').then(res => dispatch(setCohortsData(res.data.data)));
+  return axios
+    .get('/cohorts')
+    .then(res => dispatch(setCohortsData(res.data.data)));
 };
