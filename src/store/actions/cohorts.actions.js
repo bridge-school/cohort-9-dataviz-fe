@@ -7,6 +7,7 @@ export const setCohortsData = (cohorts = {}) => ({
 });
 
 export const fetchCohortsThunk = () => dispatch => {
+  // TODO: Add error handling
   return axios
     .get('/cohorts')
     .then(res => dispatch(setCohortsData(res.data.data)));
