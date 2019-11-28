@@ -1,11 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { flex, display, fontSize, fontWeight } from '../../GlobalStyle';
+
 export const ListItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  padding: 10px 5px;
-  border-radius: 30px;
+  padding: 20px;
+  border-radius: 5px;
   background: #ebecf0;
   margin-bottom: 20px;
-  text-align: center;
+  ${flex};
+  ${display};
+  ${fontSize};
+  ${fontWeight};
 `;
-
