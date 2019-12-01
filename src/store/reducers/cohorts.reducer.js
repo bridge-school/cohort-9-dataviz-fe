@@ -1,11 +1,7 @@
 import { COHORTS } from '../actions/actions.type';
 
 export const INITIAL_STATE = {
-  cohortApplicants: {},
-  cohortData: {
-    isSingleCohortPending: false,
-    isSingleCohortFailure: false
-  }
+  cohortApplicants: {}
 };
 
 export const cohortsReducer = (state = INITIAL_STATE, action = {}) => {
