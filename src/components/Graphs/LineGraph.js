@@ -7,7 +7,11 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend
+  Legend,
+  ResponsiveContainer,
+  AreaChart,
+  ReferenceLine,
+  Area
 } from 'recharts';
 
 const data = [
@@ -28,21 +32,19 @@ const data = [
 export default class LineGraph extends PureComponent {
   render() {
     return (
-      <LineGraphStyle>
+      <ResponsiveContainer width="99%" height={400}>
         <LineChart
-          width={800}
-          height={300}
           data={data}
           margin={{
             top: 5,
-            right: 30,
-            left: 20,
+            right: 5,
+            left: 5,
             bottom: 5
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
-          <YAxis />
+          <YAxis type="number" domain={[40, 50]} />
           <Tooltip />
           <Legend />
           <Line
@@ -52,7 +54,7 @@ export default class LineGraph extends PureComponent {
             activeDot={{ r: 8 }}
           />
         </LineChart>
-      </LineGraphStyle>
+      </ResponsiveContainer>
     );
   }
 }
