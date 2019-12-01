@@ -11,6 +11,8 @@ import { HomePageStyle } from './HomePageStyle';
 export const HomePage = () => {
   const dispatch = useDispatch();
   const cohorts = useSelector(state => state.allCohorts.cohortApplicants);
+  const temp = useSelector(state => state);
+  console.log('state home', temp);
 
   useEffect(() => {
     dispatch(fetchCohortsThunk());

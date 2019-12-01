@@ -17,6 +17,9 @@ const CohortPage = props => {
   const dispatch = useDispatch();
   const cohort = useSelector(state => state.activeCohort);
 
+  const temp = useSelector(state => state);
+  console.log('state cohort', temp);
+
   useEffect(() => {
     if (!cohort[cohortID]) dispatch(fetchActiveCohort(cohortID));
   }, [dispatch]);

@@ -15,15 +15,19 @@ export const fetchCohortsThunk = () => dispatch => {
 
 export const fetchActiveCohort = cohortID => dispatch => {
   //TODO: add error handling
+  dispatch({ type: SINGLE_COHORT.GET_COHORT_PENDING });
+
   return axios
     .get('http://www.mocky.io/v2/5de32f5a3000007200e9c988')
     .then(res => {
       const { data } = res;
-      console.log('data', data[cohortID]);
       dispatch({
         type: SINGLE_COHORT.SET_DATA,
         payload: data[cohortID],
         id: cohortID
       });
+    })
+    .catch(error => {
+      dispatch({ type: SINGLE_COHORT.GET_COHORT_FAILURE });
     });
 };
