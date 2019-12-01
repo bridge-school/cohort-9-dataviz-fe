@@ -1,5 +1,6 @@
 {
-  "cohort-7": {
+  "data": {
+    "id": "cohort-7",
     "gender": [
       { "name": "female", "count": 40 },
       { "name": "male", "count": 4 }

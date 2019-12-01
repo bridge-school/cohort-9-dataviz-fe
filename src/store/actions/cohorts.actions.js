@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { COHORTS, SINGLE_COHORT } from './actions.type';
+import { COHORTS } from './actions.type';
 import { API_URL } from '../../constants';
 
 export const setCohortsData = (cohorts = {}) => ({
@@ -12,23 +12,4 @@ export const fetchCohortsThunk = () => dispatch => {
   return axios
     .get(API_URL)
     .then(res => dispatch(setCohortsData(res.data.data)));
-};
-
-export const fetchActiveCohort = cohortID => dispatch => {
-  //TODO: add error handling
-  dispatch({ type: SINGLE_COHORT.GET_COHORT_PENDING });
-
-  return axios
-    .get('http://www.mocky.io/v2/5de32f5a3000007200e9c988')
-    .then(res => {
-      const { data } = res;
-      dispatch({
-        type: SINGLE_COHORT.SET_DATA,
-        payload: data[cohortID],
-        id: cohortID
-      });
-    })
-    .catch(error => {
-      dispatch({ type: SINGLE_COHORT.GET_COHORT_FAILURE });
-    });
 };

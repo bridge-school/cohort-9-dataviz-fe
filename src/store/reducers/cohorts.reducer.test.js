@@ -7,7 +7,7 @@ const initialState = {
 
 describe('Cohorts Reducer', () => {
   it('returns initial state', () => {
-    expect(cohortsReducer(undefined, {})).toEqual({});
+    expect(cohortsReducer(undefined, {})).toEqual(initialState);
   });
 
   describe('when a COHORTS.SET_DATA action is dispatched', () => {
