@@ -5,7 +5,7 @@ import GlobalStyle from './GlobalStyle';
 import { Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { HomePage } from './views/HomePage';
-import { CohortPage } from './views/CohortPage';
+import CohortPage from './views/CohortPage';
 import { Header } from './components/Header/Header';
 
 function App() {

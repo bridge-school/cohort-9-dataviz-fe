@@ -22,8 +22,3 @@ export const cohortDataReducer = (state = {}, action = {}) => {
       return state;
   }
 };
-
-//action.id as key
-//useEffect check if I have it
-//tests
-//pending success failure for loading cohortdata
