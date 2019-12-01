@@ -5,7 +5,7 @@ import { cohortDataReducer } from './singleCohort.reducer';
 // import and add separate reducers into combineReducers
 const rootReducer = combineReducers({
   allCohorts: cohortsReducer,
-  activeCohort: cohortDataReducer
+  cohortData: cohortDataReducer
 });
 
 export default rootReducer;

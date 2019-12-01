@@ -15,13 +15,12 @@ export const setSingleCohortError = () => ({
   type: SINGLE_COHORT.SET_ERROR
 });
 
-export const fetchActiveCohort = cohortID => dispatch => {
+export const fetchSingleCohortData = cohortID => dispatch => {
   //TODO: add error handling
   dispatch(setSingleCohortLoading());
   return axios
     .get('http://www.mocky.io/v2/5de4325d3000005b009f7927')
     .then(res => {
-      console.log(res);
       dispatch(setSingleCohortData(res.data.data));
     })
     .catch(error => {

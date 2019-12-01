@@ -6,7 +6,7 @@ import { CohortPageStyle } from './CohortPageStyle';
 import { GraphSectionStyle } from './GraphSectionStyle';
 import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchActiveCohort } from '../store/actions/singleCohort.actions';
+import { fetchSingleCohortData } from '../store/actions/singleCohort.actions';
 
 //import "../views/CohortPage.scss";
 
@@ -15,14 +15,10 @@ const CohortPage = props => {
   const cohortID = `cohort-${history.location.pathname.split('/')[2]}`;
 
   const dispatch = useDispatch();
-  const cohort = useSelector(state => state.activeCohort[cohortID]);
-
-  const s = useSelector(state => state);
-  console.log('state', s);
-  console.log('cohort', cohort);
+  const cohort = useSelector(state => state.cohortData[cohortID]);
 
   useEffect(() => {
-    if (!cohort) dispatch(fetchActiveCohort(cohortID));
+    if (!cohort) dispatch(fetchSingleCohortData(cohortID));
   }, [dispatch]);
 
   return (
