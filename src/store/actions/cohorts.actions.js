@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { COHORTS, SINGLE_COHORT } from './actions.type';
+import { API_URL } from '../../constants';
 
 export const setCohortsData = (cohorts = {}) => ({
   type: COHORTS.SET_DATA,
@@ -9,7 +10,7 @@ export const setCohortsData = (cohorts = {}) => ({
 export const fetchCohortsThunk = () => dispatch => {
   // TODO: Add error handling
   return axios
-    .get('/cohorts')
+    .get(API_URL)
     .then(res => dispatch(setCohortsData(res.data.data)));
 };
 
