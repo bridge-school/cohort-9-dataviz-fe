@@ -1,10 +1,11 @@
-import { COHORTS } from '../actions/actions.type';
+import { COHORTS, SINGLE_COHORT } from '../actions/actions.type';
 
 export const INITIAL_STATE = {
-  cohortApplicants: {}
+  cohortApplicants: {},
+  cohortData: {}
 };
 
-export const cohortsReducer = (state = INITIAL_STATE, action = {}) => {
+export const cohortsReducer = (state = {}, action = {}) => {
   switch (action.type) {
     case COHORTS.SET_DATA:
       return { ...state, cohortApplicants: action.payload };
@@ -12,3 +13,17 @@ export const cohortsReducer = (state = INITIAL_STATE, action = {}) => {
       return state;
   }
 };
+
+export const cohortDataReducer = (state = {}, action = {}) => {
+  switch (action.type) {
+    case SINGLE_COHORT.SET_DATA:
+      return { ...state, [action.id]: action.payload };
+    default:
+      return state;
+  }
+};
+
+//action.id as key
+//useEffect check if I have it
+//tests
+//pending success failure for loading cohortdata
