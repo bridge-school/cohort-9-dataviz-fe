@@ -19,7 +19,7 @@ export const HomePage = () => {
   return (
     <HomePageStyle>
       <Title />
-      <CohortList cohorts={cohorts} />
+      {cohorts && <CohortList cohorts={cohorts} />}
       <LineGraph />
     </HomePageStyle>
   );
