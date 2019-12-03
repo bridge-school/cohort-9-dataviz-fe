@@ -21,7 +21,7 @@ export const HomePage = () => {
     <HomePageStyle>
       <Wrapper column flex>
         <Title />
-        <LineGraph />
+        <LineGraph data={cohorts} />
         <CohortList cohorts={cohorts} />
       </Wrapper>
     </HomePageStyle>

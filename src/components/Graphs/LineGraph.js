@@ -8,10 +8,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer,
-  AreaChart,
-  ReferenceLine,
-  Area
+  ResponsiveContainer
 } from 'recharts';
 
 const data = [
