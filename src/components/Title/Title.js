@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react';
 
-export const Title = () => {
-    return <h3>This is Title</h3>;
+export const Title = ({ text }) => {
+  return <h3>{text}</h3>;
 };
