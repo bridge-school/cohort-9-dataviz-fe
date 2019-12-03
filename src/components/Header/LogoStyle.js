@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const LogoStyle = styled.img`
-  max-width: 60px;
-  width: 100%;
-  margin-right: 20px;
+  max-width: 100%;
+  max-height: 75%;
+  padding: 6px 2vh;
 `;

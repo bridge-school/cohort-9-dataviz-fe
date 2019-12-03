@@ -3,7 +3,6 @@ import CohortListItem from '../CohortListItem/CohortListItem';
 import { List } from './CohortListStyle';
 
 export const CohortList = ({ cohorts }) => {
-
   const cohortsIdList = Object.keys(cohorts)
     .map(cohort => cohort.split('-')[1])
     .sort((a, b) => Number(b) - Number(a));

@@ -1,7 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HomePageStyle = styled.div`
-  height: calc(92vh - 50px);
-  margin-bottom: 50px;
-  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0em 2em;
+  height: 100vh;
+  background-color: rgb(166, 204, 247);
 `;
