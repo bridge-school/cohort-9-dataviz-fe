@@ -1,5 +1,5 @@
 import React from 'react';
-import GlobalStyle from './GlobalStyle';
+import { GlobalStyle } from './GlobalStyle';
 
 //import { request } from "./backend-request";
 import { Route } from 'react-router-dom';
