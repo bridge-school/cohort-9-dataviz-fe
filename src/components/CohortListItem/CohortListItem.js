@@ -5,7 +5,7 @@ import { Badge } from '../../GlobalStyle';
 
 const CohortListItem = ({ cohortID, key }) => {
   return (
-    <ListItem
+    <ListItem 
       flex
       justify="space-between"
       align="center"
@@ -17,7 +17,7 @@ const CohortListItem = ({ cohortID, key }) => {
         to={`/cohorts/${cohortID}`}
         style={{ color: '#000', textDecoration: 'none' }}
       >
-        {cohortID.replace('-', ' ')}
+        Cohort {cohortID}
       </Link>
       <Badge white fontSmall>
         front-end development
