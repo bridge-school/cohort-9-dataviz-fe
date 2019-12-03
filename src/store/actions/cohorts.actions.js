@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { axios } from 'axios';
 import { COHORTS } from './actions.type';
 import { API_URL } from '../../constants';
 

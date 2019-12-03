@@ -5,10 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCohortsThunk } from '../store/actions/cohorts.actions';
 import { Title } from '../components/Title/Title';
 import { CohortList } from '../components/CohortList/CohortList';
-import { LineGraph } from '../components/Graphs/LineGraph';
+import LineGraph from '../components/Graphs/LineGraph';
 import { HomePageStyle } from './HomePageStyle';
 import { Wrapper } from '../GlobalStyle';
-
 
 export const HomePage = () => {
   const dispatch = useDispatch();
