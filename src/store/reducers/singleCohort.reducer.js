@@ -6,7 +6,6 @@ export const INITIAL_STATE = {
 };
 
 export const cohortDataReducer = (state = INITIAL_STATE, action = {}) => {
-  console.log('bla');
   switch (action.type) {
     case SINGLE_COHORT.SET_LOADING:
       return {
