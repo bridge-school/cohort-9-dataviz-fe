@@ -7,6 +7,8 @@ import { Title } from '../components/Title/Title';
 import { CohortList } from '../components/CohortList/CohortList';
 import { LineGraph } from '../components/Graphs/LineGraph';
 import { HomePageStyle } from './HomePageStyle';
+import { Wrapper } from '../GlobalStyle';
+
 
 export const HomePage = () => {
   const dispatch = useDispatch();
@@ -18,9 +20,11 @@ export const HomePage = () => {
 
   return (
     <HomePageStyle>
-      <Title />
-      <CohortList cohorts={cohorts} />
-      <LineGraph />
+      <Wrapper column flex>
+        <Title />
+        <LineGraph />
+        <CohortList cohorts={cohorts} />
+      </Wrapper>
     </HomePageStyle>
   );
 };
