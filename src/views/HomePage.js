@@ -22,7 +22,7 @@ export const HomePage = () => {
       <Wrapper column flex>
         <Title />
         <LineGraph />
-        {cohorts && <CohortList cohorts={cohorts} />}
+        {cohorts && <CohortList />}
       </Wrapper>
     </HomePageStyle>
   );

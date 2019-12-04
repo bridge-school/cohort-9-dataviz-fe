@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import CohortListItem from '../CohortListItem/CohortListItem';
 import { List } from './CohortListStyle';
+import { useSelector } from 'react-redux';
 
-export const CohortList = ({ cohorts }) => {
-  const cohortsIdList = Object.keys(cohorts)
-    .map(cohort => cohort.split('-')[1])
-    .sort((a, b) => Number(b) - Number(a));
-  const cohortsItems = cohortsIdList.map((cohortID, index) => (
-    <CohortListItem cohortID={cohortID} key={cohortID + index} />
-  ));
+export const CohortList = () => {
+  const cohorts = useSelector(state => state.allCohorts.cohortApplicants);
+  const [cohortsItems, setCohortItems] = useState([]);
+  //console.log('cohortListItems', cohortsItems);
 
-  return (
-    <div>
-      <List>{cohortsItems}</List>
-    </div>
-  );
+  useEffect(() => {
+    if (cohorts.length > 0) {
+      const cohortsItemsList = cohorts.map((cohort, index) => {
+        return <CohortListItem cohortID={cohort.id} key={cohort.id + index} />;
+      });
+      setCohortItems(cohortsItemsList);
+    }
+  }, [cohorts]);
+
+  //
+
+  return <div>{cohortsItems && <List>{cohortsItems}</List>}</div>;
+  //return <h2>bla</h2>;
 };
