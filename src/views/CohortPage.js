@@ -15,7 +15,6 @@ const CohortPage = props => {
   const cohortID = history.location.pathname.split('/')[2];
   const dispatch = useDispatch();
   const cohort = useSelector(state => state.cohortData[cohortID]);
-  const s = useSelector(state => state);
 
   useEffect(() => {
     if (!cohort) dispatch(fetchSingleCohortData(cohortID));
