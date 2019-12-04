@@ -20,7 +20,7 @@ export const HomePage = () => {
   return (
     <HomePageStyle>
       <Wrapper column flex>
-        <Title />
+        <Title text="Cohorts" />
         <LineGraph />
         {cohorts && <CohortList cohorts={cohorts} />}
       </Wrapper>

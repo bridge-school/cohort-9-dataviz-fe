@@ -1,10 +1,10 @@
 import React from 'react';
 import { MainHeader } from '../../GlobalStyle';
 
-export const Title = ({ title }) => {
+export const Title = ({ text }) => {
   return (
     <MainHeader fontLarge bold>
-      {title || `Cohorts`}
+      {text}
     </MainHeader>
   );
 };
