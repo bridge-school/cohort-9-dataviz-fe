@@ -1,37 +1,50 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, useRouteMatch } from 'react-router-dom';
 import { Sidebar } from '../components/Sidebar/Sidebar';
 import { BarGraph } from '../components/Graphs/BarGraph';
 import { CohortPageStyle } from './CohortPageStyle';
 import { GraphSectionStyle } from './GraphSectionStyle';
+import { Wrapper } from '../GlobalStyle';
+import { withRouter } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchSingleCohortData } from '../store/actions/singleCohort.actions';
 
-//import "../views/CohortPage.scss";
-
-export const CohortPage = props => {
+const CohortPage = props => {
+  const { history } = props;
+  const cohortID = `cohort-${history.location.pathname.split('/')[2]}`;
   const { path } = useRouteMatch();
 
+  const dispatch = useDispatch();
+  const cohort = useSelector(state => state.cohortData[cohortID]);
+
+  useEffect(() => {
+    if (!cohort) dispatch(fetchSingleCohortData(cohortID));
+  }, [cohort, cohortID, dispatch]);
+
   return (
-    <CohortPageStyle>
-      <Sidebar />
-      <GraphSectionStyle>
-        {/* Shows gender identity graph as the default */}
-        {/* TODO: redirect this to /gender-identity */}
-        <Route exact path={path}>
-          <BarGraph title="Gender Identity" data={data.gender} />
-        </Route>
-        <Route path={`${path}/gender-identity`}>
-          <BarGraph title="Gender Identity" data={data.gender} />
-        </Route>
-        <Route path={`${path}/minority-group`}>
-          <BarGraph title="Minority Group" data={data.minorityGroup} />
-        </Route>
-        <Route path={`${path}/previous-bootcamp`}>
-          <BarGraph title="Previous Bootcamp" data={data.previousBootcamp} />
-        </Route>
-        <Route path={`${path}/employment-status`}>
-          <BarGraph title="Employment Status" data={data.employmentStatus} />
-        </Route>
-      </GraphSectionStyle>
+    <CohortPageStyle grid>
+      <Wrapper>
+        <Sidebar />
+        <GraphSectionStyle>
+          {/* Shows gender identity graph as the default */}
+          {/* TODO: redirect this to /gender-identity */}
+          <Route exact path={path}>
+            <BarGraph title="Gender Identity" data={data.gender} />
+          </Route>
+          <Route path={`${path}/gender-identity`}>
+            <BarGraph title="Gender Identity" data={data.gender} />
+          </Route>
+          <Route path={`${path}/minority-group`}>
+            <BarGraph title="Minority Group" data={data.minorityGroup} />
+          </Route>
+          <Route path={`${path}/previous-bootcamp`}>
+            <BarGraph title="Previous Bootcamp" data={data.previousBootcamp} />
+          </Route>
+          <Route path={`${path}/employment-status`}>
+            <BarGraph title="Employment Status" data={data.employmentStatus} />
+          </Route>
+        </GraphSectionStyle>
+      </Wrapper>
     </CohortPageStyle>
   );
 };
@@ -123,3 +136,4 @@ const data = {
     }
   ]
 };
+export default withRouter(CohortPage);
