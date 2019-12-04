@@ -1,5 +1,10 @@
-import React from "react";
+import React from 'react';
+import { MainHeader } from '../../GlobalStyle';
 
 export const Title = () => {
-    return <h3>This is Title</h3>;
+  return (
+    <MainHeader fontLarge bold>
+      Cohorts
+    </MainHeader>
+  );
 };

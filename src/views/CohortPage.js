@@ -4,6 +4,7 @@ import { Sidebar } from '../components/Sidebar/Sidebar';
 import { BarGraph } from '../components/Graphs/BarGraph';
 import { CohortPageStyle } from './CohortPageStyle';
 import { GraphSectionStyle } from './GraphSectionStyle';
+import { Wrapper } from '../GlobalStyle';
 import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSingleCohortData } from '../store/actions/singleCohort.actions';
@@ -22,12 +23,14 @@ const CohortPage = props => {
   }, [dispatch]);
 
   return (
-    <CohortPageStyle>
-      <Sidebar />
-      <GraphSectionStyle>
-        <Title />
-        <BarGraph />
-      </GraphSectionStyle>
+    <CohortPageStyle grid>
+      <Wrapper>
+        <Sidebar />
+        <GraphSectionStyle>
+          <Title />
+          <BarGraph />
+        </GraphSectionStyle>
+      </Wrapper>
     </CohortPageStyle>
   );
 };
