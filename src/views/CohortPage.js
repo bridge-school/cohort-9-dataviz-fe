@@ -14,123 +14,40 @@ const CohortPage = props => {
   const cohortID = history.location.pathname.split('/')[2];
   const { path } = useRouteMatch();
   const dispatch = useDispatch();
-  const cohort = useSelector(state => state.cohortData[cohortID]);
+  const cohort = useSelector(state => state.cohortData[`cohort-${cohortID}`]);
 
   useEffect(() => {
     if (!cohort) dispatch(fetchSingleCohortData(cohortID));
   }, [cohort, cohortID, dispatch]);
 
+  const renderGraphRoutes = () => (
+    <>
+      {/* Shows gender identity graph as the default */}
+      {/* TODO: redirect / to /gender-identity right away */}
+      <Route exact path={path}>
+        <BarGraph title="Gender Identity" data={cohort.gender} />
+      </Route>
+      <Route path={`${path}/gender-identity`}>
+        <BarGraph title="Gender Identity" data={cohort.gender} />
+      </Route>
+      <Route path={`${path}/minority-group`}>
+        <BarGraph title="Minority Group" data={cohort.minorityGroup} />
+      </Route>
+      <Route path={`${path}/previous-bootcamp`}>
+        <BarGraph title="Previous Bootcamp" data={cohort.previousBootcamp} />
+      </Route>
+      <Route path={`${path}/employment-status`}>
+        <BarGraph title="Employment Status" data={cohort.employmentStatus} />
+      </Route>
+    </>
+  );
+
   return (
     <CohortPageStyle grid>
       <Sidebar />
-      <GraphSectionStyle>
-        {/* Shows gender identity graph as the default */}
-        {/* TODO: redirect this to /gender-identity */}
-        <Route exact path={path}>
-          <BarGraph title="Gender Identity" data={data.gender} />
-        </Route>
-        <Route path={`${path}/gender-identity`}>
-          <BarGraph title="Gender Identity" data={data.gender} />
-        </Route>
-        <Route path={`${path}/minority-group`}>
-          <BarGraph title="Minority Group" data={data.minorityGroup} />
-        </Route>
-        <Route path={`${path}/previous-bootcamp`}>
-          <BarGraph title="Previous Bootcamp" data={data.previousBootcamp} />
-        </Route>
-        <Route path={`${path}/employment-status`}>
-          <BarGraph title="Employment Status" data={data.employmentStatus} />
-        </Route>
-      </GraphSectionStyle>
+      <GraphSectionStyle>{cohort && renderGraphRoutes()}</GraphSectionStyle>
     </CohortPageStyle>
   );
 };
 
-const data = {
-  id: 'cohort-6',
-  gender: [
-    {
-      name: 'Woman',
-      count: 39
-    },
-    {
-      name: 'Non-biry',
-      count: 2
-    },
-    {
-      name: 'Man',
-      count: 2
-    }
-  ],
-  minorityGroup: [
-    {
-      name: 'Prefer not to disclose',
-      count: 12
-    },
-    {
-      name: 'LGBTQIA+',
-      count: 4
-    },
-    {
-      name: 'Other',
-      count: 3
-    },
-    {
-      name: 'Person of colour',
-      count: 20
-    }
-  ],
-  previousBootcamp: [
-    {
-      name: 'Other',
-      count: 1
-    },
-    {
-      name: 'HackerYou',
-      count: 15
-    },
-    {
-      name: 'Bitmaker',
-      count: 2
-    },
-    {
-      name: 'BrainStation',
-      count: 2
-    },
-    {
-      name: 'Lighthouse Labs',
-      count: 5
-    },
-    {
-      name: 'University of Toronto Coding Bootcamp',
-      count: 1
-    },
-    {
-      name: 'I have not attended a bootcamp',
-      count: 19
-    }
-  ],
-  employmentStatus: [
-    {
-      name: 'Employed full time',
-      count: 26
-    },
-    {
-      name: 'Employed part time',
-      count: 5
-    },
-    {
-      name: 'Unemployed and not looking for a job',
-      count: 2
-    },
-    {
-      name: 'Unemployed and looking for a job',
-      count: 7
-    },
-    {
-      name: 'In school full time',
-      count: 3
-    }
-  ]
-};
 export default withRouter(CohortPage);
