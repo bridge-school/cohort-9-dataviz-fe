@@ -1,5 +1,6 @@
 import { SINGLE_COHORT } from './actions.type';
 import axios from 'axios';
+import { API_URL } from '../../constants';
 
 export const setSingleCohortData = (cohort = {}) => ({
   type: SINGLE_COHORT.SET_DATA,
@@ -18,7 +19,7 @@ export const setSingleCohortError = () => ({
 export const fetchSingleCohortData = cohortID => dispatch => {
   dispatch(setSingleCohortLoading());
   return axios
-    .get('http://www.mocky.io/v2/5de4325d3000005b009f7927')
+    .get(`${API_URL}/${cohortID}`)
     .then(res => {
       dispatch(setSingleCohortData(res.data.data));
     })

@@ -12,10 +12,10 @@ import { fetchSingleCohortData } from '../store/actions/singleCohort.actions';
 
 const CohortPage = props => {
   const { history } = props;
-  const cohortID = `cohort-${history.location.pathname.split('/')[2]}`;
-
+  const cohortID = history.location.pathname.split('/')[2];
   const dispatch = useDispatch();
   const cohort = useSelector(state => state.cohortData[cohortID]);
+  const s = useSelector(state => state);
 
   useEffect(() => {
     if (!cohort) dispatch(fetchSingleCohortData(cohortID));
