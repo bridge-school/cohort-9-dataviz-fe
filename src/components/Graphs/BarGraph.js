@@ -5,11 +5,10 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  // Text,
   Tooltip,
-  // Legend,
   ResponsiveContainer
 } from 'recharts';
+import { CustomizedAxisTick } from './CustomizedAxisTick';
 import { Title } from '../Title/Title';
 
 export class BarGraph extends PureComponent {
@@ -19,7 +18,7 @@ export class BarGraph extends PureComponent {
     return (
       <>
         <Title text={title} />
-        <ResponsiveContainer width="99%" height={500}>
+        <ResponsiveContainer width="95%" height={600}>
           <BarChart
             data={data}
             margin={{
@@ -30,8 +29,14 @@ export class BarGraph extends PureComponent {
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            {/* <XAxis dataKey="name" interval={0} angle={30} dx={20} /> */}
-            <XAxis dataKey="name" interval={0} tick={<CustomizedAxisTick />} />
+            <XAxis
+              dataKey="name"
+              interval={0}
+              tick={<CustomizedAxisTick />}
+              height={50}
+              maxChars={200}
+              width={300}
+            />
             <YAxis type="number" />
             <Tooltip />
             {/* <Legend /> */}
@@ -39,27 +44,6 @@ export class BarGraph extends PureComponent {
           </BarChart>
         </ResponsiveContainer>
       </>
-    );
-  }
-}
-
-class CustomizedAxisTick extends PureComponent {
-  render() {
-    const { x, y, stroke, payload } = this.props;
-
-    return (
-      <g transform={`translate(${x},${y})`}>
-        <text
-          x={0}
-          y={0}
-          dy={16}
-          textAnchor="end"
-          fill="#666"
-          transform="rotate(-35)"
-        >
-          {payload.value}
-        </text>
-      </g>
     );
   }
 }
