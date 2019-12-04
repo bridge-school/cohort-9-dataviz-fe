@@ -5,9 +5,9 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Text,
+  // Text,
   Tooltip,
-  Legend,
+  // Legend,
   ResponsiveContainer
 } from 'recharts';
 import { Title } from '../Title/Title';
