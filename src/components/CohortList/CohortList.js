@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 export const CohortList = () => {
   const cohorts = useSelector(state => state.allCohorts.cohortApplicants);
   const [cohortsItems, setCohortItems] = useState([]);
-  //console.log('cohortListItems', cohortsItems);
 
   useEffect(() => {
     if (cohorts.length > 0) {
@@ -17,8 +16,5 @@ export const CohortList = () => {
     }
   }, [cohorts]);
 
-  //
-
   return <div>{cohortsItems && <List>{cohortsItems}</List>}</div>;
-  //return <h2>bla</h2>;
 };

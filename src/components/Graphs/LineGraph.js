@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+
 import { LineGraphStyle } from './LineGraphStyle';
 import {
   LineChart,
@@ -11,27 +12,16 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-const data = [
-  {
-    name: 'cohort-6',
-    count: 43
-  },
-  {
-    name: 'cohort-8',
-    count: 43
-  },
-  {
-    name: 'cohort-7',
-    count: 44
-  }
-];
-
 export default class LineGraph extends PureComponent {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <ResponsiveContainer width="99%" height={400}>
         <LineChart
-          data={data}
+          data={this.props.cohorts}
           margin={{
             top: 5,
             right: 5,
@@ -40,13 +30,13 @@ export default class LineGraph extends PureComponent {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="id" />
           <YAxis type="number" domain={[40, 50]} />
           <Tooltip />
           <Legend />
           <Line
             type="monotone"
-            dataKey="count"
+            dataKey="applicants"
             stroke="#8884d8"
             activeDot={{ r: 8 }}
           />
