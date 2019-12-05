@@ -23,6 +23,7 @@ export const fetchSingleCohortData = cohortID => dispatch => {
       dispatch(setSingleCohortData(res.data.data));
     })
     .catch(error => {
+      console.log('There is an error', error.message);
       dispatch(setSingleCohortError());
     });
 };

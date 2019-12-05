@@ -8,6 +8,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  Label,
   ResponsiveContainer
 } from 'recharts';
 
@@ -32,18 +33,25 @@ export default class LineGraph extends PureComponent {
       <ResponsiveContainer width="99%" height={400}>
         <LineChart
           data={data}
-          margin={{
-            top: 5,
-            right: 5,
-            left: 5,
-            bottom: 5
-          }}
+          margin={{ top: 5, right: 5, left: 5, bottom: 15 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis type="number" domain={[40, 50]} />
+          <XAxis dataKey="name" padding={{ left: 50 }} />
+          <YAxis type="number" domain={[40, 50]} dx={0}>
+            <Label
+              value="Amount of people applied"
+              position="insideLeft"
+              angle={-90}
+              style={{
+                textAnchor: 'middle',
+                fontSize: 18,
+                fontFamily: 'Open Sans'
+              }}
+            >
+              Amount of people applied
+            </Label>
+          </YAxis>
           <Tooltip />
-          <Legend />
           <Line
             type="monotone"
             dataKey="count"

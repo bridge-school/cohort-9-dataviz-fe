@@ -24,13 +24,11 @@ const CohortPage = props => {
 
   return (
     <CohortPageStyle grid>
-      <Wrapper>
-        <Sidebar />
-        <GraphSectionStyle>
-          <Title />
-          <BarGraph />
-        </GraphSectionStyle>
-      </Wrapper>
+      <Sidebar />
+      <GraphSectionStyle>
+        <Title />
+        <BarGraph />
+      </GraphSectionStyle>
     </CohortPageStyle>
   );
 };
