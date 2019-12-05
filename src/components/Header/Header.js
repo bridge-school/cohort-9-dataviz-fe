@@ -3,31 +3,31 @@ import logo from '../../bridgeLogo.svg';
 import { HeaderStyle } from './HeaderStyle';
 import { LogoStyle } from './LogoStyle';
 import { Wrapper, Badge } from '../../GlobalStyle';
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
-  const history = useHistory();
   return (
     <HeaderStyle>
       <Wrapper flex="space-between">
         <Wrapper bold white fontMedium flex align="center" row>
-          <LogoStyle
-            src={logo}
-            alt="Logo"
-            onClick={() => history.push('/home')}
-            pointer
-          />
+          <Link
+            to="/home"
+            label="Home"
+            style={{ textDecoration: 'none', 'align-self': 'center' }}
+          >
+            <LogoStyle src={logo} alt="Logo" />
+          </Link>
           Cohort Application Data
         </Wrapper>
-        <Badge
-          white
-          fontSmall
-          align="self"
-          onClick={() => history.push('/home')}
-          pointer
+        <Link
+          to="/home"
+          label="Home"
+          style={{ textDecoration: 'none', 'align-self': 'center' }}
         >
-          Home
-        </Badge>
+          <Badge white fontSmall align="self">
+            Home
+          </Badge>
+        </Link>
       </Wrapper>
     </HeaderStyle>
   );
