@@ -78,6 +78,12 @@ export const flex = css`
     `}
 
   ${props =>
+    props.align === 'self' &&
+    css`
+      align-self: center;
+    `}
+
+  ${props =>
     props.alignContent === 'flex-start' &&
     css`
       align-content: flex-start;
@@ -150,6 +156,10 @@ export const fontSize = css`
     (props.fontSmall && '20px')};
 `;
 
+export const cursorStyle = css`
+  cursor: ${props => props.pointer && 'pointer'};
+`;
+
 export const Wrapper = styled.div`
   width: 90%;
   margin: 0 auto;
@@ -172,4 +182,6 @@ export const Badge = styled.div`
   padding: 10px 20px;
   ${fontColor};
   ${fontSize};
+  ${flex};
+  ${cursorStyle};
 `;

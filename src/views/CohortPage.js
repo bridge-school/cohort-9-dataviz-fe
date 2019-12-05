@@ -5,14 +5,14 @@ import { BarGraph } from '../components/Graphs/BarGraph';
 import { CohortPageStyle } from './CohortPageStyle';
 import { GraphSectionStyle } from './GraphSectionStyle';
 import { Wrapper } from '../GlobalStyle';
-import { withRouter } from 'react-router-dom';
+import { withRouter, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSingleCohortData } from '../store/actions/singleCohort.actions';
 
 //import "../views/CohortPage.scss";
 
-const CohortPage = props => {
-  const { history } = props;
+const CohortPage = () => {
+  const history = useHistory();
   const cohortID = history.location.pathname.split('/')[2];
   const dispatch = useDispatch();
   const cohort = useSelector(state => state.cohortData[cohortID]);
