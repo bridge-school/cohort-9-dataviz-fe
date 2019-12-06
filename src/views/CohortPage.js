@@ -15,7 +15,6 @@ const CohortPage = props => {
   const { path } = useRouteMatch();
   const dispatch = useDispatch();
   const cohort = useSelector(state => state.cohortData[`cohort-${cohortID}`]);
-  console.log('cohortid', cohortID);
 
   useEffect(() => {
     if (!cohort) dispatch(fetchSingleCohortData(cohortID));
