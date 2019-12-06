@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { LineGraphStyle } from './LineGraphStyle';
 import {
   LineChart,
   Line,

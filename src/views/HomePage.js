@@ -34,7 +34,7 @@ export const HomePage = () => {
         )}
         {isPending && !isFailure && (
           <>
-            <Title />
+            <Title text="Cohorts" />
             <LineGraph />
             {cohorts && <CohortList cohorts={cohorts} />}
           </>

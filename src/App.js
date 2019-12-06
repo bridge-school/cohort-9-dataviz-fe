@@ -17,7 +17,7 @@ function App() {
         {/*TODO: add defaut route*/}
         <Route exact path="/" component={HomePage} />
         <Route exact path="/home" component={HomePage} />
-        <Route exact path="/cohorts/:id" component={CohortPage} />
+        <Route path="/cohorts/:id" component={CohortPage} />
       </div>
     </BrowserRouter>
   );
