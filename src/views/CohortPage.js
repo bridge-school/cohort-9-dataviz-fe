@@ -15,6 +15,7 @@ const CohortPage = props => {
   const { path } = useRouteMatch();
   const dispatch = useDispatch();
   const cohort = useSelector(state => state.cohortData[`cohort-${cohortID}`]);
+  console.log('cohortid', cohortID);
 
   useEffect(() => {
     if (!cohort) dispatch(fetchSingleCohortData(cohortID));
@@ -25,19 +26,34 @@ const CohortPage = props => {
       {/* Shows gender identity graph as the default */}
       {/* TODO: redirect / to /gender-identity right away */}
       <Route exact path={path}>
-        <BarGraph title="Gender Identity" data={cohort.gender} />
+        <BarGraph
+          title={`Cohort ${cohortID}: Gender Identity`}
+          data={cohort.gender}
+        />
       </Route>
       <Route path={`${path}/gender-identity`}>
-        <BarGraph title="Gender Identity" data={cohort.gender} />
+        <BarGraph
+          title={`Cohort ${cohortID}: Gender Identity`}
+          data={cohort.gender}
+        />
       </Route>
       <Route path={`${path}/minority-group`}>
-        <BarGraph title="Minority Group" data={cohort.minorityGroup} />
+        <BarGraph
+          title={`Cohort ${cohortID}: Minority Groups`}
+          data={cohort.minorityGroup}
+        />
       </Route>
       <Route path={`${path}/previous-bootcamp`}>
-        <BarGraph title="Previous Bootcamp" data={cohort.previousBootcamp} />
+        <BarGraph
+          title={`Cohort ${cohortID}: Previous Bootcamp`}
+          data={cohort.previousBootcamp}
+        />
       </Route>
       <Route path={`${path}/employment-status`}>
-        <BarGraph title="Employment Status" data={cohort.employmentStatus} />
+        <BarGraph
+          title={`Cohort ${cohortID}: Employment Status`}
+          data={cohort.employmentStatus}
+        />
       </Route>
     </>
   );
