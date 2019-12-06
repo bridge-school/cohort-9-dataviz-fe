@@ -2,14 +2,32 @@ import React from 'react';
 import logo from '../../bridgeLogo.svg';
 import { HeaderStyle } from './HeaderStyle';
 import { LogoStyle } from './LogoStyle';
-import { Wrapper } from '../../GlobalStyle';
+import { Wrapper, Badge } from '../../GlobalStyle';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   return (
     <HeaderStyle>
-      <Wrapper bold white fontMedium flex align="center" row>
-        <LogoStyle src={logo} alt="Logo" />
-        Cohort Application Data
+      <Wrapper flex="space-between">
+        <Wrapper bold white fontMedium flex align="center" row>
+          <Link
+            to="/home"
+            label="Home"
+            style={{ textDecoration: 'none', 'align-self': 'center' }}
+          >
+            <LogoStyle src={logo} alt="Logo" />
+          </Link>
+          Cohort Application Data
+        </Wrapper>
+        <Link
+          to="/home"
+          label="Home"
+          style={{ textDecoration: 'none', 'align-self': 'center' }}
+        >
+          <Badge white fontSmall align="self">
+            Home
+          </Badge>
+        </Link>
       </Wrapper>
     </HeaderStyle>
   );
