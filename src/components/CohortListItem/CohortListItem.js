@@ -6,6 +6,8 @@ import { Badge } from '../../GlobalStyle';
 const CohortListItem = ({ cohortID, key }) => {
   const formatedLabel =
     cohortID.charAt(0).toUpperCase() + cohortID.slice(1).replace('-', ' ');
+  const cohortNumber = cohortID.split('-')[1];
+
   return (
     <ListItem
       flex
@@ -16,7 +18,7 @@ const CohortListItem = ({ cohortID, key }) => {
       key={key}
     >
       <Link
-        to={`/cohorts/${cohortID}`}
+        to={`/cohorts/${cohortNumber}`}
         style={{ color: '#000', textDecoration: 'none' }}
       >
         {formatedLabel}
