@@ -9,7 +9,7 @@ export const CohortList = () => {
 
   useEffect(() => {
     if (cohorts.length > 0) {
-      const cohortsItemsList = cohorts.map((cohort, index) => {
+      const cohortsItemsList = cohorts.reverse().map((cohort, index) => {
         return <CohortListItem cohortID={cohort.id} key={cohort.id + index} />;
       });
       setCohortItems(cohortsItemsList);
