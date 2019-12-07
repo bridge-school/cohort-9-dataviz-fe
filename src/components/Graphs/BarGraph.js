@@ -13,7 +13,7 @@ import { GraphTitle } from './GraphTitle';
 
 export class BarGraph extends PureComponent {
   render() {
-    const { data, title, color } = this.props;
+    const { data, title, fillColor } = this.props;
 
     return (
       <>
@@ -40,7 +40,7 @@ export class BarGraph extends PureComponent {
             <YAxis type="number" />
             <Tooltip />
             {/* <Legend /> */}
-            <Bar type="monotone" dataKey="count" barSize={100} fill="#8884d8" />
+            <Bar type="monotone" dataKey="count" barSize={100} fill={fillColor} />
           </BarChart>
         </ResponsiveContainer>
       </>
