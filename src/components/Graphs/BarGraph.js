@@ -13,7 +13,7 @@ import { GraphTitle } from './GraphTitle';
 
 export class BarGraph extends PureComponent {
   render() {
-    const { data, title } = this.props;
+    const { data, title, color } = this.props;
 
     return (
       <>

@@ -1,5 +1,17 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
 
+export const theme = {
+  color: {
+    text: 'rgb(53, 53, 53)',
+    bluePurple: 'rgb(78, 87, 202)',
+    aqua: 'rgb(47, 161, 212)',
+    white: 'white',
+    blue: 'rgb(0, 12, 158)',
+    pink: 'rgb(235, 44, 151)',
+    green: 'rgb(8, 195, 157)'
+  }
+};
+
 export const GlobalStyle = createGlobalStyle`
     html,
     body {
@@ -10,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
     
     * {
         font: 100% "Open Sans", sans-serif;
-        color: rgb(53, 53, 53);
+        color: ${theme.color.text};
     }
 `;
 
@@ -141,12 +153,12 @@ export const flex = css`
 
 export const fontColor = css`
   color: ${props =>
-    (props.bluePurple && 'rgb(78, 87, 202)') ||
-    (props.aqua && 'rgb(47, 161, 212)') ||
-    (props.white && 'white') ||
-    (props.blue && 'rgb(0, 12, 158)') ||
-    (props.pink && 'rgb(235, 44, 151)') ||
-    (props.green && 'rgb(8, 195, 157)')};
+    (props.bluePurple && theme.color.bluePurple) ||
+    (props.aqua && theme.color.aqua) ||
+    (props.white && theme.color.white) ||
+    (props.blue && theme.color.blue) ||
+    (props.pink && theme.color.pink) ||
+    (props.green && theme.color.green)};
 `;
 
 export const fontSize = css`
@@ -191,7 +203,7 @@ export const SubHeader = styled.h2`
 
 export const Badge = styled.div`
   border-radius: 5px;
-  background: rgb(235, 44, 151);
+  background: ${theme.color.pink};
   padding: 10px 20px;
   ${fontColor};
   ${fontSize};
