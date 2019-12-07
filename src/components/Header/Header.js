@@ -13,7 +13,7 @@ export const Header = () => {
           <Link
             to="/home"
             label="Home"
-            style={{ textDecoration: 'none', 'align-self': 'center' }}
+            style={{ textDecoration: 'none', alignSelf: 'center' }}
           >
             <LogoStyle src={logo} alt="Logo" />
           </Link>
@@ -22,7 +22,7 @@ export const Header = () => {
         <Link
           to="/home"
           label="Home"
-          style={{ textDecoration: 'none', 'align-self': 'center' }}
+          style={{ textDecoration: 'none', alignSelf: 'center' }}
         >
           <Badge white fontSmall align="self">
             Home
