@@ -156,6 +156,13 @@ export const fontSize = css`
     (props.fontSmall && '20px')};
 `;
 
+export const paddingLeft = css`
+  padding-left: ${props =>
+    (props.paddingLeftLarge && '65px') ||
+    (props.paddingLeftMedium && '30px') ||
+    (props.paddingLeftSmall && '10px')};
+`;
+
 export const cursorStyle = css`
   cursor: ${props => props.pointer && 'pointer'};
 `;
@@ -174,6 +181,12 @@ export const Wrapper = styled.div`
 export const MainHeader = styled.h1`
   ${fontWeight};
   ${fontSize};
+`;
+
+export const SubHeader = styled.h2`
+  ${fontWeight}
+  ${fontSize}
+  ${paddingLeft}
 `;
 
 export const Badge = styled.div`

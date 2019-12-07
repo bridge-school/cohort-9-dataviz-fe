@@ -9,7 +9,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 import { CustomizedAxisTick } from './CustomizedAxisTick';
-import { Title } from '../Title/Title';
+import { GraphTitle } from './GraphTitle';
 
 export class BarGraph extends PureComponent {
   render() {
@@ -17,8 +17,8 @@ export class BarGraph extends PureComponent {
 
     return (
       <>
-        <Title text={title} />
-        <ResponsiveContainer width="95%" height={600}>
+        <GraphTitle text={title} />
+        <ResponsiveContainer width="100%" height={600}>
           <BarChart
             data={data}
             margin={{
