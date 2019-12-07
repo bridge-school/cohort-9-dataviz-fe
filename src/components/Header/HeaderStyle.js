@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { flex, display, fontWeight } from '../../GlobalStyle';
+import { flex, display, fontWeight, theme } from '../../GlobalStyle';
 
 export const HeaderStyle = styled.header`
-  background-color: rgb(78, 87, 202);
+  background-color: ${theme.color.bluePurple};
   width: 100%;
   height: 8vh;
   padding: 10px 0;
