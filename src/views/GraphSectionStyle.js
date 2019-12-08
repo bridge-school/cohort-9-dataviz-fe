@@ -9,4 +9,5 @@ export const GraphSectionStyle = styled.div`
   background-color: ${theme.color.white};
   height: 100%;
   padding-right: 40px;
+  overflow: auto;
 `;
