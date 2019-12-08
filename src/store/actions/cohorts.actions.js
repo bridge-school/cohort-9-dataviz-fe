@@ -7,9 +7,20 @@ export const setCohortsData = (cohorts = {}) => ({
   payload: cohorts
 });
 
+export const setCohortLoading = () => ({
+  type: COHORTS.SET_LOADING
+});
+
+export const setCohortError = () => ({
+  type: COHORTS.SET_ERROR
+});
+
 export const fetchCohortsThunk = () => dispatch => {
-  // TODO: Add error handling
+  dispatch(setCohortLoading());
   return axios
     .get(API_URL)
-    .then(res => dispatch(setCohortsData(res.data.data)));
+    .then(res => dispatch(setCohortsData(res.data.data)))
+    .catch(err => {
+      dispatch(setCohortError());
+    });
 };

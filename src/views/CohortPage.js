@@ -69,6 +69,7 @@ const CohortPage = ({ theme }) => {
   return (
     <CohortPageStyle grid>
       <Sidebar />
+
       <GraphSectionStyle>{cohort && renderGraphRoutes()}</GraphSectionStyle>
     </CohortPageStyle>
   );

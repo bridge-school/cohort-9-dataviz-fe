@@ -2,7 +2,9 @@ import { cohortsReducer } from './cohorts.reducer';
 import { setCohortsData } from '../actions/cohorts.actions';
 
 const initialState = {
-  cohortApplicants: {}
+  cohortApplicants: {},
+  isPending: false,
+  isFailure: false
 };
 
 describe('Cohorts Reducer', () => {
