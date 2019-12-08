@@ -22,7 +22,7 @@ export class BarGraph extends PureComponent {
         <ResponsiveContainer width="100%" height={600}>
           <BarChart
             data={data}
-            margin={{ top: 5, right: 5, left: 5, bottom: 175 }}
+            margin={{ top: 5, right: 5, left: 20, bottom: 175 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
