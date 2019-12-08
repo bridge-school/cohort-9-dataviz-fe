@@ -6,7 +6,7 @@ export const orderBars = (dataArr, lastBar) => {
   );
 
   const sortedFiltered =
-    filtered[0].name == 'Other' ? filtered : filtered.reverse();
+    filtered[0].name === 'Other' ? filtered : filtered.reverse();
 
   const filtered2 = descData.filter(
     object => object.name !== 'Other' && object.name !== lastBar
