@@ -14,7 +14,6 @@ import {
 export default class LineGraph extends PureComponent {
   render() {
     const reversed = [...this.props.cohorts].reverse();
-    console.log('test', reversed);
     return (
       <ResponsiveContainer width="99%" height={400}>
         <LineChart
