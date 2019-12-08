@@ -35,7 +35,7 @@ export class BarGraph extends PureComponent {
             />
             <YAxis type="number">
               <Label
-                value="Number of responses"
+                value="Number of Responses"
                 position="insideLeft"
                 angle={-90}
                 style={{
@@ -44,7 +44,7 @@ export class BarGraph extends PureComponent {
                   fontFamily: 'Open Sans'
                 }}
               >
-                Number of responses
+                Number of Responses
               </Label>
             </YAxis>
             <Tooltip />
