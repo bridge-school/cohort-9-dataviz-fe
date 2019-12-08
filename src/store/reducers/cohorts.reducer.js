@@ -18,7 +18,9 @@ export const cohortsReducer = (state = INITIAL_STATE, action = {}) => {
     case COHORTS.SET_DATA:
       return {
         ...state,
-        cohortApplicants: action.payload
+        cohortApplicants: action.payload,
+        isPending: false,
+        isFailure: false
       };
 
     case COHORTS.SET_ERROR:

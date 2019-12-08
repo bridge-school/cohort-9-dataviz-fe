@@ -22,17 +22,15 @@ export const HomePage = () => {
   return (
     <HomePageStyle>
       <Wrapper column flex>
-        {!isPending && !isFailure && (
+        {isPending ? (
           <NotificationStyle align="center" alignSelf="center" blue fontLarge>
             Loading...
           </NotificationStyle>
-        )}
-        {isFailure && (
+        ) : isFailure ? (
           <NotificationStyle align="center" alignSelf="center" pink fontLarge>
             Sorry, something went wrong. Please try again later.
           </NotificationStyle>
-        )}
-        {isPending && !isFailure && (
+        ) : (
           <>
             <Title text="Cohorts" />
             <LineGraph />

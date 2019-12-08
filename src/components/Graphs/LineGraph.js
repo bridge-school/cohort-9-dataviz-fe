@@ -38,7 +38,7 @@ export default class LineGraph extends PureComponent {
           <XAxis dataKey="name" padding={{ left: 50 }} />
           <YAxis type="number" domain={[40, 50]} dx={0}>
             <Label
-              value="Amount of people applied"
+              value="Number of Applicants"
               position="insideLeft"
               angle={-90}
               style={{
@@ -47,7 +47,7 @@ export default class LineGraph extends PureComponent {
                 fontFamily: 'Open Sans'
               }}
             >
-              Amount of people applied
+              Number of Applicants
             </Label>
           </YAxis>
           <Tooltip />
