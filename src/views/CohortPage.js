@@ -25,10 +25,16 @@ const CohortPage = () => {
       {/* Shows gender identity graph as the default */}
       {/* TODO: redirect / to /gender-identity right away */}
       <Route exact path={path}>
-        <BarGraph title="Gender Identity" data={cohort.gender} />
+        <BarGraph
+          title={`Cohort ${cohortID}: Gender Identity`}
+          data={cohort.gender}
+        />
       </Route>
       <Route path={`${path}/gender-identity`}>
-        <BarGraph title="Gender Identity" data={cohort.gender} />
+        <BarGraph
+          title={`Cohort ${cohortID}: Gender Identity`}
+          data={cohort.gender}
+        />
       </Route>
       <Route path={`${path}/minority-group`}>
         <BarGraph
