@@ -7,6 +7,7 @@ import { GraphSectionStyle } from './GraphSectionStyle';
 import { withRouter, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSingleCohortData } from '../store/actions/singleCohort.actions';
+import { orderMinority, orderPrevBootcamp, sortDesc } from '../utils/order';
 
 //import "../views/CohortPage.scss";
 
@@ -32,13 +33,22 @@ const CohortPage = () => {
         <BarGraph title="Gender Identity" data={cohort.gender} />
       </Route>
       <Route path={`${path}/minority-group`}>
-        <BarGraph title="Minority Group" data={cohort.minorityGroup} />
+        <BarGraph
+          title="Minority Group"
+          data={orderMinority(cohort.minorityGroup)}
+        />
       </Route>
       <Route path={`${path}/previous-bootcamp`}>
-        <BarGraph title="Previous Bootcamp" data={cohort.previousBootcamp} />
+        <BarGraph
+          title="Previous Bootcamp"
+          data={orderPrevBootcamp(cohort.previousBootcamp)}
+        />
       </Route>
       <Route path={`${path}/employment-status`}>
-        <BarGraph title="Employment Status" data={cohort.employmentStatus} />
+        <BarGraph
+          title="Employment Status"
+          data={sortDesc(cohort.employmentStatus)}
+        />
       </Route>
     </>
   );
