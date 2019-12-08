@@ -38,13 +38,13 @@ const CohortPage = () => {
       </Route>
       <Route path={`${path}/minority-group`}>
         <BarGraph
-          title="Minority Group"
+          title={`Cohort ${cohortID}: Minority Groups`}
           data={orderBars(cohort.minorityGroup, 'Prefer not to disclose')}
         />
       </Route>
       <Route path={`${path}/previous-bootcamp`}>
         <BarGraph
-          title="Previous Bootcamp"
+          title={`Cohort ${cohortID}: Previous Bootcamp`}
           data={orderBars(
             cohort.previousBootcamp,
             'I have not attended a bootcamp'
@@ -53,7 +53,7 @@ const CohortPage = () => {
       </Route>
       <Route path={`${path}/employment-status`}>
         <BarGraph
-          title="Employment Status"
+          title={`Cohort ${cohortID}: Employment Status`}
           data={sortDesc(cohort.employmentStatus)}
         />
       </Route>
