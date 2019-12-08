@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle, theme } from './GlobalStyle';
@@ -15,10 +15,14 @@ function App() {
         <div className="App">
           <GlobalStyle />
           <Header />
-          {/*TODO: add defaut route*/}
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/home" component={HomePage} />
-          <Route path="/cohorts/:id" component={CohortPage} />
+          <Switch>
+            <Route path="/cohorts/:id">
+              <CohortPage />
+            </Route>
+            <Route path="/">
+              <HomePage />
+            </Route>
+          </Switch>
         </div>
       </BrowserRouter>
     </ThemeProvider>
