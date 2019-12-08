@@ -1,15 +1,18 @@
 export const orderBars = (dataArr, lastBar) => {
   const descData = dataArr.concat().sort((a, b) => b.count - a.count);
 
-  const filtered = descData
-    .filter(object => (object.name === 'Other') | (object.name === lastBar))
-    .sort((a, b) => a.name.localeCompare(b.name));
+  const filtered = descData.filter(
+    object => (object.name === 'Other') | (object.name === lastBar)
+  );
+
+  const sortedFiltered =
+    filtered[0].name == 'Other' ? filtered : [filtered[1], filtered[0]];
 
   const filtered2 = descData.filter(
     object => object.name !== 'Other' && object.name !== lastBar
   );
 
-  const result = filtered2.concat(filtered);
+  const result = filtered2.concat(sortedFiltered);
   return result;
 };
 
