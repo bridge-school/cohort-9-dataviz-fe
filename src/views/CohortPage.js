@@ -43,6 +43,7 @@ const CohortPage = ({ theme }) => {
         <BarGraph
           title={`Cohort ${cohortID}: Minority Groups`}
           data={orderBars(cohort.minorityGroup, 'Prefer not to disclose')}
+          fillColor={theme.color.aqua}
         />
       </Route>
       <Route path={`${path}/previous-bootcamp`}>
@@ -52,12 +53,14 @@ const CohortPage = ({ theme }) => {
             cohort.previousBootcamp,
             'I have not attended a bootcamp'
           )}
+          fillColor={theme.color.pink}
         />
       </Route>
       <Route path={`${path}/employment-status`}>
         <BarGraph
           title={`Cohort ${cohortID}: Employment Status`}
           data={sortDesc(cohort.employmentStatus)}
+          fillColor={theme.color.bluePurple}
         />
       </Route>
     </>
