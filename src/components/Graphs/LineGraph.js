@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { GraphTitle } from './GraphTitle';
-import { CustomizedRotatedAxisTick } from './CustomizedAxisTick';
+import { CustomizedAxisTick } from './CustomizedAxisTick';
 
 import {
   LineChart,
@@ -19,7 +19,7 @@ export default class LineGraph extends PureComponent {
     return (
       <>
         <GraphTitle text={'Applicants by Cohort'} />
-        <ResponsiveContainer width="99%" height={500}>
+        <ResponsiveContainer width="99%" height={400}>
           <LineChart
             data={reversed}
             margin={{ top: 5, right: 5, left: 5, bottom: 30 }}
@@ -28,7 +28,7 @@ export default class LineGraph extends PureComponent {
             <XAxis
               dataKey="id"
               padding={{ left: 0 }}
-              tick={<CustomizedRotatedAxisTick fontSize={18} />}
+              tick={<CustomizedAxisTick fontSize={18} />}
             />
             <YAxis type="number" domain={[40, 50]} dx={0}>
               <Label
