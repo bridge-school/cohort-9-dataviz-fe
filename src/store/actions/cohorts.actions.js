@@ -21,7 +21,6 @@ export const fetchCohortsThunk = () => dispatch => {
     .get(API_URL)
     .then(res => dispatch(setCohortsData(res.data.data)))
     .catch(err => {
-      console.error('There is an error', err.message);
       dispatch(setCohortError());
     });
 };
