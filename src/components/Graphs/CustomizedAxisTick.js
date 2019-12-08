@@ -33,7 +33,7 @@ export class CustomizedAxisTick extends PureComponent {
           textAnchor="middle"
           fontSize={fontSize}
           fill={fill}
-          dy={16}
+          dy={25}
         >
           {payload.value}
         </text>
