@@ -17,15 +17,15 @@ const CohortListItem = ({ cohortID, key }) => {
       bold
       key={key}
     >
+      {formattedLabel}
       <Link
         to={`/cohorts/${cohortNumber}`}
         style={{ color: '#000', textDecoration: 'none' }}
       >
-        {formattedLabel}
+        <Badge white fontSmall>
+          Check details
+        </Badge>
       </Link>
-      <Badge white fontSmall>
-        front-end development
-      </Badge>
     </ListItem>
   );
 };
