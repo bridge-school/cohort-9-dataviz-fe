@@ -22,7 +22,7 @@ const CohortListItem = ({ cohortID, key }) => {
         to={`/cohorts/${cohortNumber}`}
         style={{ color: '#000', textDecoration: 'none' }}
       >
-        <Badge white fontSmall>
+        <Badge white fontSmall normal>
           Check details
         </Badge>
       </Link>

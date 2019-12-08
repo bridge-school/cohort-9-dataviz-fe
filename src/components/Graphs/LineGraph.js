@@ -27,8 +27,8 @@ export default class LineGraph extends PureComponent {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
               dataKey="id"
-              padding={{ left: 30, right: 30 }}
-              tick={<CustomizedAxisTick fontSize={18} />}
+              padding={{ left: 40, right: 40 }}
+              tick={<CustomizedAxisTick fontSize={20} />}
             />
             <YAxis type="number" domain={[40, 50]} dx={0}>
               <Label

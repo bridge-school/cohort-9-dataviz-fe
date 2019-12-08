@@ -233,6 +233,7 @@ export const Badge = styled.div`
   margin: 0 auto;
   ${fontColor};
   ${fontSize};
+  ${fontWeight};
   ${flex};
   ${cursorStyle};
   ${textAlign};
