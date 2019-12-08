@@ -14,10 +14,6 @@ export const orderBars = (dataArr, lastBar) => {
 };
 
 export const sortDesc = dataArr => {
-  const descData = dataArr
-    .concat()
-    .sort((a, b) => a.count - b.count)
-    .reverse();
-
+  const descData = dataArr.concat().sort((a, b) => b.count - a.count);
   return descData;
 };
