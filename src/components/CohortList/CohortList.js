@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CohortListItem from '../CohortListItem/CohortListItem';
 import { List } from './CohortListStyle';
 import { useSelector } from 'react-redux';

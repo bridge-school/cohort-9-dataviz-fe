@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 
-import { LineGraphStyle } from './LineGraphStyle';
 import {
   LineChart,
   Line,
@@ -13,10 +12,6 @@ import {
 } from 'recharts';
 
 export default class LineGraph extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <ResponsiveContainer width="99%" height={400}>
