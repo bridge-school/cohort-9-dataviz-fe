@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react';
-import { Route, useRouteMatch } from 'react-router-dom';
+import { Route, useRouteMatch, useHistory, withRouter } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { withTheme } from 'styled-components';
+
 import { Sidebar } from '../components/Sidebar/Sidebar';
 import { BarGraph } from '../components/Graphs/BarGraph';
 import { CohortPageStyle } from './CohortPageStyle';
 import { GraphSectionStyle } from './GraphSectionStyle';
-import { withRouter, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { fetchSingleCohortData } from '../store/actions/singleCohort.actions';
 
-//import "../views/CohortPage.scss";
-
-const CohortPage = () => {
+const CohortPage = ({ theme }) => {
   const history = useHistory();
   const cohortID = history.location.pathname.split('/')[2];
   const { path } = useRouteMatch();
@@ -29,30 +28,35 @@ const CohortPage = () => {
         <BarGraph
           title={`Cohort ${cohortID}: Gender Identity`}
           data={cohort.gender}
+          fillColor={theme.color.green}
         />
       </Route>
       <Route path={`${path}/gender-identity`}>
         <BarGraph
           title={`Cohort ${cohortID}: Gender Identity`}
           data={cohort.gender}
+          fillColor={theme.color.green}
         />
       </Route>
       <Route path={`${path}/minority-group`}>
         <BarGraph
           title={`Cohort ${cohortID}: Minority Groups`}
           data={cohort.minorityGroup}
+          fillColor={theme.color.aqua}
         />
       </Route>
       <Route path={`${path}/previous-bootcamp`}>
         <BarGraph
           title={`Cohort ${cohortID}: Previous Bootcamp`}
           data={cohort.previousBootcamp}
+          fillColor={theme.color.pink}
         />
       </Route>
       <Route path={`${path}/employment-status`}>
         <BarGraph
           title={`Cohort ${cohortID}: Employment Status`}
           data={cohort.employmentStatus}
+          fillColor={theme.color.bluePurple}
         />
       </Route>
     </>
@@ -66,4 +70,4 @@ const CohortPage = () => {
   );
 };
 
-export default withRouter(CohortPage);
+export default withRouter(withTheme(CohortPage));
