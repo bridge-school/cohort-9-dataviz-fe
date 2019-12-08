@@ -4,12 +4,14 @@ import { List } from './CohortListStyle';
 import { useSelector } from 'react-redux';
 
 export const CohortList = () => {
-  const cohorts = useSelector(state => state.allCohorts.cohortApplicants);
+  const cohorts = useSelector(state =>
+    state.allCohorts.cohortApplicants.reverse()
+  );
   const [cohortsItems, setCohortItems] = useState([]);
 
   useEffect(() => {
     if (cohorts.length > 0) {
-      const cohortsItemsList = cohorts.reverse().map((cohort, index) => {
+      const cohortsItemsList = cohorts.map((cohort, index) => {
         return <CohortListItem cohortID={cohort.id} key={cohort.id + index} />;
       });
       setCohortItems(cohortsItemsList);

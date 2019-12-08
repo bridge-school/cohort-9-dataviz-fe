@@ -4,7 +4,7 @@ import { ListItem } from './CohortListItemStyle';
 import { Badge } from '../../GlobalStyle';
 
 const CohortListItem = ({ cohortID, key }) => {
-  const formatedLabel =
+  const formattedLabel =
     cohortID.charAt(0).toUpperCase() + cohortID.slice(1).replace('-', ' ');
   const cohortNumber = cohortID.split('-')[1];
 
@@ -21,7 +21,7 @@ const CohortListItem = ({ cohortID, key }) => {
         to={`/cohorts/${cohortNumber}`}
         style={{ color: '#000', textDecoration: 'none' }}
       >
-        {formatedLabel}
+        {formattedLabel}
       </Link>
       <Badge white fontSmall>
         front-end development
