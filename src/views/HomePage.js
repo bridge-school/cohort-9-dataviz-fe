@@ -26,8 +26,8 @@ const renderView = (isPending, isFailure, cohorts) => {
   } else if (!isEmpty(cohorts)) {
     return (
       <div>
-        <Title text="Cohorts" />
         <LineGraph cohorts={cohorts} />
+        <Title text="Cohorts List" />
         <CohortList />
       </div>
     );

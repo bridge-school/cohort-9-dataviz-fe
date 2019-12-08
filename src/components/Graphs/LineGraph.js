@@ -18,7 +18,7 @@ export default class LineGraph extends PureComponent {
     const reversed = [...this.props.cohorts].reverse();
     return (
       <>
-        <GraphTitle text={'Applicants By Cohort'} />
+        <GraphTitle text={'Applicants by Cohort'} />
         <ResponsiveContainer width="99%" height={400}>
           <LineChart
             data={reversed}
