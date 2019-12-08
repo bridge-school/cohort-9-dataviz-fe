@@ -7,16 +7,11 @@ export const CohortList = () => {
   const cohorts = useSelector(state =>
     state.allCohorts.cohortApplicants.reverse()
   );
-  const [cohortsItems, setCohortItems] = useState([]);
-
-  useEffect(() => {
-    if (cohorts.length > 0) {
-      const cohortsItemsList = cohorts.map((cohort, index) => {
-        return <CohortListItem cohortID={cohort.id} key={cohort.id + index} />;
-      });
-      setCohortItems(cohortsItemsList);
-    }
-  }, [cohorts]);
-
-  return <div>{cohortsItems && <List>{cohortsItems}</List>}</div>;
+  return (
+    <List>
+      {cohorts.map((cohort, index) => (
+        <CohortListItem cohortID={cohort.id} key={cohort.id + index} />
+      ))}
+    </List>
+  );
 };
