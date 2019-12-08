@@ -28,7 +28,7 @@ export class BarGraph extends PureComponent {
             <XAxis
               dataKey="name"
               interval={0}
-              tick={<CustomizedRotatedAxisTick />}
+              tick={<CustomizedRotatedAxisTick fontSize={15} />}
               height={50}
               maxChars={200}
               width={300}

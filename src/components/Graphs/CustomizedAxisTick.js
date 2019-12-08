@@ -51,7 +51,7 @@ CustomizedAxisTick.defaultProps = {
 
 export class CustomizedRotatedAxisTick extends PureComponent {
   render() {
-    const { x, y, payload } = this.props;
+    const { x, y, payload, fontSize } = this.props;
 
     return (
       <g transform={`translate(${x},${y})`}>
@@ -61,6 +61,7 @@ export class CustomizedRotatedAxisTick extends PureComponent {
           dy={16}
           textAnchor="end"
           fill="#666"
+          fontSize={fontSize}
           transform="rotate(-35)"
         >
           {payload.value}
@@ -69,3 +70,7 @@ export class CustomizedRotatedAxisTick extends PureComponent {
     );
   }
 }
+
+CustomizedRotatedAxisTick.defaultProps = {
+  fontSize: 12
+};
