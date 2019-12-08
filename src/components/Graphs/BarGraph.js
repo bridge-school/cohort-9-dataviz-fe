@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import {
   BarChart,
   Bar,
+  Label,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -32,14 +33,20 @@ export class BarGraph extends PureComponent {
               maxChars={200}
               width={300}
             />
-            <YAxis
-              type="number"
-              label={{
-                value: 'Number of responses',
-                angle: -90,
-                position: 'insideLeft'
-              }}
-            ></YAxis>
+            <YAxis type="number">
+              <Label
+                value="Number of responses"
+                position="insideLeft"
+                angle={-90}
+                style={{
+                  textAnchor: 'middle',
+                  fontSize: 18,
+                  fontFamily: 'Open Sans'
+                }}
+              >
+                Number of responses
+              </Label>
+            </YAxis>
             <Tooltip />
             {/* <Legend /> */}
             <Bar
