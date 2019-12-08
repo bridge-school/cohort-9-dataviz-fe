@@ -4,9 +4,7 @@ import { List } from './CohortListStyle';
 import { useSelector } from 'react-redux';
 
 export const CohortList = () => {
-  const cohorts = useSelector(state =>
-    state.allCohorts.cohortApplicants.reverse()
-  );
+  const cohorts = useSelector(state => state.allCohorts.cohortApplicants);
   return (
     <List>
       {cohorts.map((cohort, index) => (

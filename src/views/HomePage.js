@@ -24,7 +24,7 @@ export const HomePage = () => {
         <Title />
         {!isEmpty(cohorts) && (
           <>
-            <LineGraph cohorts={cohorts.reverse()} />
+            <LineGraph cohorts={cohorts} />
             <CohortList />
           </>
         )}
