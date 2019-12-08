@@ -4,6 +4,10 @@ import { ListItem } from './CohortListItemStyle';
 import { Badge } from '../../GlobalStyle';
 
 const CohortListItem = ({ cohortID, key }) => {
+  const formattedLabel =
+    cohortID.charAt(0).toUpperCase() + cohortID.slice(1).replace('-', ' ');
+  const cohortNumber = cohortID.split('-')[1];
+
   return (
     <ListItem
       flex
@@ -13,15 +17,15 @@ const CohortListItem = ({ cohortID, key }) => {
       bold
       key={key}
     >
+      {formattedLabel}
       <Link
-        to={`/cohorts/${cohortID}`}
+        to={`/cohorts/${cohortNumber}`}
         style={{ color: '#000', textDecoration: 'none' }}
       >
-        Cohort {cohortID}
+        <Badge white fontSmall>
+          Check details
+        </Badge>
       </Link>
-      <Badge white fontSmall>
-        front-end development
-      </Badge>
     </ListItem>
   );
 };

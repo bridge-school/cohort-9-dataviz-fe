@@ -1,6 +1,7 @@
 //This is a file for the home page
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import isEmpty from 'lodash/isEmpty';
 
 import { fetchCohortsThunk } from '../store/actions/cohorts.actions';
 import { Title } from '../components/Title/Title';
@@ -20,9 +21,13 @@ export const HomePage = () => {
   return (
     <HomePageStyle>
       <Wrapper column flex>
-        <Title text="Cohorts" />
-        <LineGraph />
-        {cohorts && <CohortList cohorts={cohorts} />}
+        <Title />
+        {!isEmpty(cohorts) && (
+          <>
+            <LineGraph cohorts={cohorts} />
+            <CohortList />
+          </>
+        )}
       </Wrapper>
     </HomePageStyle>
   );
