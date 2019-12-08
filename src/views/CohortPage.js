@@ -26,35 +26,35 @@ const CohortPage = ({ theme }) => {
       {/* TODO: redirect / to /gender-identity right away */}
       <Route exact path={path}>
         <BarGraph
-          title="Gender Identity"
+          title={`Cohort ${cohortID}: Gender Identity`}
           data={cohort.gender}
           fillColor={theme.color.green}
         />
       </Route>
       <Route path={`${path}/gender-identity`}>
         <BarGraph
-          title="Gender Identity"
+          title={`Cohort ${cohortID}: Gender Identity`}
           data={cohort.gender}
           fillColor={theme.color.green}
         />
       </Route>
       <Route path={`${path}/minority-group`}>
         <BarGraph
-          title="Minority Group"
+          title={`Cohort ${cohortID}: Minority Groups`}
           data={cohort.minorityGroup}
           fillColor={theme.color.aqua}
         />
       </Route>
       <Route path={`${path}/previous-bootcamp`}>
         <BarGraph
-          title="Previous Bootcamp"
+          title={`Cohort ${cohortID}: Previous Bootcamp`}
           data={cohort.previousBootcamp}
           fillColor={theme.color.pink}
         />
       </Route>
       <Route path={`${path}/employment-status`}>
         <BarGraph
-          title="Employment Status"
+          title={`Cohort ${cohortID}: Employment Status`}
           data={cohort.employmentStatus}
           fillColor={theme.color.bluePurple}
         />
