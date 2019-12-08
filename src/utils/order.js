@@ -1,8 +1,5 @@
 export const orderBars = (dataArr, lastBar) => {
-  const descData = dataArr
-    .concat()
-    .sort((a, b) => a.count - b.count)
-    .reverse();
+  const descData = dataArr.concat().sort((a, b) => b.count - a.count);
 
   const filtered = descData
     .filter(object => (object.name === 'Other') | (object.name === lastBar))
