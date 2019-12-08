@@ -8,6 +8,7 @@ import { BarGraph } from '../components/Graphs/BarGraph';
 import { CohortPageStyle } from './CohortPageStyle';
 import { GraphSectionStyle } from './GraphSectionStyle';
 import { fetchSingleCohortData } from '../store/actions/singleCohort.actions';
+import { orderBars, sortDesc } from '../utils/order';
 
 const CohortPage = ({ theme }) => {
   const history = useHistory();
@@ -41,21 +42,24 @@ const CohortPage = ({ theme }) => {
       <Route path={`${path}/minority-group`}>
         <BarGraph
           title={`Cohort ${cohortID}: Minority Groups`}
-          data={cohort.minorityGroup}
+          data={orderBars(cohort.minorityGroup, 'Prefer not to disclose')}
           fillColor={theme.color.aqua}
         />
       </Route>
       <Route path={`${path}/previous-bootcamp`}>
         <BarGraph
           title={`Cohort ${cohortID}: Previous Bootcamp`}
-          data={cohort.previousBootcamp}
+          data={orderBars(
+            cohort.previousBootcamp,
+            'I have not attended a bootcamp'
+          )}
           fillColor={theme.color.pink}
         />
       </Route>
       <Route path={`${path}/employment-status`}>
         <BarGraph
           title={`Cohort ${cohortID}: Employment Status`}
-          data={cohort.employmentStatus}
+          data={sortDesc(cohort.employmentStatus)}
           fillColor={theme.color.bluePurple}
         />
       </Route>
@@ -65,6 +69,7 @@ const CohortPage = ({ theme }) => {
   return (
     <CohortPageStyle grid>
       <Sidebar />
+
       <GraphSectionStyle>{cohort && renderGraphRoutes()}</GraphSectionStyle>
     </CohortPageStyle>
   );

@@ -1,7 +1,9 @@
 //This is the file to list all actionsß
 
 export const COHORTS = {
-  SET_DATA: 'set cohorts data'
+  SET_DATA: 'set cohorts data',
+  SET_LOADING: 'sent a request for all cohorts data',
+  SET_ERROR: 'receive all cohorts data failed'
 };
 
 export const SINGLE_COHORT = {

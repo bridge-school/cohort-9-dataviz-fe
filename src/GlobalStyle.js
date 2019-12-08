@@ -118,6 +118,11 @@ export const flex = css`
     css`
       align-items: flex-end;
     `}
+  ${props =>
+    props.alignSelf === 'center' &&
+    css`
+      align-self: center;
+    `}
 
   ${props =>
     props.center &&
