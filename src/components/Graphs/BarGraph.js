@@ -9,7 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer
 } from 'recharts';
-import { CustomizedAxisTick } from './CustomizedAxisTick';
+import { CustomizedRotatedAxisTick } from './CustomizedAxisTick';
 import { GraphTitle } from './GraphTitle';
 
 export class BarGraph extends PureComponent {
@@ -28,7 +28,7 @@ export class BarGraph extends PureComponent {
             <XAxis
               dataKey="name"
               interval={0}
-              tick={<CustomizedAxisTick />}
+              tick={<CustomizedRotatedAxisTick />}
               height={50}
               maxChars={200}
               width={300}
