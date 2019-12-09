@@ -30,6 +30,7 @@ const CohortPage = ({ theme }) => {
           title={`Cohort ${cohortID}: Gender Identity`}
           data={cohort.gender}
           fillColor={theme.color.green}
+          appliData={cohort.applicants}
         />
       </Route>
       <Route path={`${path}/gender-identity`}>
@@ -37,6 +38,7 @@ const CohortPage = ({ theme }) => {
           title={`Cohort ${cohortID}: Gender Identity`}
           data={cohort.gender}
           fillColor={theme.color.green}
+          appliData={cohort.applicants}
         />
       </Route>
       <Route path={`${path}/minority-group`}>
@@ -44,6 +46,7 @@ const CohortPage = ({ theme }) => {
           title={`Cohort ${cohortID}: Minority Groups`}
           data={orderBars(cohort.minorityGroup, 'Prefer not to disclose')}
           fillColor={theme.color.aqua}
+          appliData={cohort.applicants}
         />
       </Route>
       <Route path={`${path}/previous-bootcamp`}>
@@ -54,6 +57,7 @@ const CohortPage = ({ theme }) => {
             'I have not attended a bootcamp'
           )}
           fillColor={theme.color.pink}
+          appliData={cohort.applicants}
         />
       </Route>
       <Route path={`${path}/employment-status`}>
@@ -61,6 +65,7 @@ const CohortPage = ({ theme }) => {
           title={`Cohort ${cohortID}: Employment Status`}
           data={sortDesc(cohort.employmentStatus)}
           fillColor={theme.color.bluePurple}
+          aappliData={cohort.applicants}
         />
       </Route>
     </>
@@ -69,7 +74,6 @@ const CohortPage = ({ theme }) => {
   return (
     <CohortPageStyle grid>
       <Sidebar />
-
       <GraphSectionStyle>{cohort && renderGraphRoutes()}</GraphSectionStyle>
     </CohortPageStyle>
   );

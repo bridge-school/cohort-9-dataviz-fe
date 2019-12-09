@@ -11,10 +11,11 @@ import {
 } from 'recharts';
 import { CustomizedRotatedAxisTick } from './CustomizedAxisTick';
 import { GraphTitle } from './GraphTitle';
+import { ChartSummary } from './ChartSummary';
 
 export class BarGraph extends PureComponent {
   render() {
-    const { data, title, fillColor } = this.props;
+    const { data, title, fillColor, appliData } = this.props;
 
     return (
       <>
@@ -57,6 +58,7 @@ export class BarGraph extends PureComponent {
             />
           </BarChart>
         </ResponsiveContainer>
+        <ChartSummary data={appliData} />
       </>
     );
   }
