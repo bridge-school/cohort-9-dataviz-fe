@@ -7,6 +7,7 @@ import { CohortPageStyle, NotificationStyle } from './CohortPageStyle';
 import { GraphSectionStyle } from './GraphSectionStyle';
 import { fetchSingleCohortData } from '../store/actions/singleCohort.actions';
 import { GraphRoutes } from './GraphRoutes';
+import isEmpty from 'lodash/isEmpty';
 
 const renderView = (isPending, isFailure, cohort, cohortID) => {
   if (isPending) {
@@ -21,7 +22,7 @@ const renderView = (isPending, isFailure, cohort, cohortID) => {
         Sorry, something went wrong. Please try again later.
       </NotificationStyle>
     );
-  } else if (cohort) {
+  } else if (!isEmpty(cohort)) {
     return <GraphRoutes cohortID={cohortID} cohort={cohort} />;
   }
 };
