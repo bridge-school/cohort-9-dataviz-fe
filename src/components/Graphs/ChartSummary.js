@@ -5,6 +5,6 @@ export const ChartSummary = ({ appliData, answData }) => {
   return (
     <ChartSummaryStyle
       fontMedium
-    >{`${answData}/${appliData} Applicants Answered`}</ChartSummaryStyle>
+    >{`${answData} / ${appliData} Applicants Answered`}</ChartSummaryStyle>
   );
 };
