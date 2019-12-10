@@ -1,5 +1,10 @@
 import React from 'react';
+import { ChartSummaryStyle } from './ChartSummaryStyle';
 
-export const ChartSummary = ({ data }) => {
-  return <div>{`Number of Applicants: ${data}`}</div>;
+export const ChartSummary = ({ appliData, answData }) => {
+  return (
+    <ChartSummaryStyle
+      fontMedium
+    >{`${answData}/${appliData} Applicants Answered`}</ChartSummaryStyle>
+  );
 };
