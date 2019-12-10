@@ -41,7 +41,6 @@ export const CohortPage = () => {
   return (
     <CohortPageStyle grid>
       <Sidebar />
-      {/* <GraphSectionStyle>{renderView()}</GraphSectionStyle> */}
       <GraphSectionStyle>
         {renderView(isPending, isFailure, cohort, cohortID)}
       </GraphSectionStyle>
