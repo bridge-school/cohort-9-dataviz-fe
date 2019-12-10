@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle, theme } from './GlobalStyle';
 import { HomePage } from './views/HomePage';
-import CohortPage from './views/CohortPage';
+import { CohortPage } from './views/CohortPage';
 import { Header } from './components/Header/Header';
 
 function App() {

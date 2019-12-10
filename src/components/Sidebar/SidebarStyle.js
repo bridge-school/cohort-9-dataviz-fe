@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { theme } from '../../GlobalStyle';
 
 export const SidebarStyle = styled.div`
   grid-column-start: 1;

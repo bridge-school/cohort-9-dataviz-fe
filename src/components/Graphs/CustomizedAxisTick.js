@@ -6,8 +6,8 @@ export class CustomizedAxisTick extends PureComponent {
       x,
       y,
       payload,
-      maxChars,
-      lineHeight,
+      // maxChars,
+      // lineHeight,
       width,
       fontSize,
       fill
