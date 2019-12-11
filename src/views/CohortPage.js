@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import isEmpty from 'lodash/isEmpty';
 
 import { Sidebar } from '../components/Sidebar/Sidebar';
 import { CohortPageStyle, NotificationStyle } from './CohortPageStyle';
@@ -9,7 +10,7 @@ import { fetchSingleCohortData } from '../store/actions/singleCohort.actions';
 import { GraphRoutes } from './GraphRoutes';
 
 const renderView = (isPending, isFailure, cohort, cohortID) => {
-  if (isPending) {
+  if (isPending || isEmpty(cohort)) {
     return (
       <NotificationStyle align="center" alignSelf="center" blue fontLarge>
         Loading...
@@ -21,7 +22,7 @@ const renderView = (isPending, isFailure, cohort, cohortID) => {
         Sorry, something went wrong. Please try again later.
       </NotificationStyle>
     );
-  } else if (cohort) {
+  } else if (!isEmpty(cohort)) {
     return <GraphRoutes cohortID={cohortID} cohort={cohort} />;
   }
 };
