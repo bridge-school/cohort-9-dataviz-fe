@@ -17,7 +17,7 @@ export const Header = () => {
           >
             <LogoStyle src={logo} alt="Logo" />
           </Link>
-          Cohort Application Data
+          BridgeViz - Application Data Portal
         </Wrapper>
         <Link
           to="/home"
