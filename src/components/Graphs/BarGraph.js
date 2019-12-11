@@ -11,15 +11,17 @@ import {
 } from 'recharts';
 import { CustomizedRotatedAxisTick } from './CustomizedAxisTick';
 import { GraphTitle } from './GraphTitle';
+import { ChartSummary } from './ChartSummary';
 
 export class BarGraph extends PureComponent {
   render() {
-    const { data, title, fillColor } = this.props;
+    const { data, title, fillColor, appliData, answData } = this.props;
 
     return (
       <>
         <GraphTitle text={title} />
-        <ResponsiveContainer width="100%" height={600}>
+        <ChartSummary appliData={appliData} answData={answData} />
+        <ResponsiveContainer width="100%" height={530}>
           <BarChart
             data={data}
             margin={{ top: 5, right: 5, left: 20, bottom: 175 }}
@@ -28,7 +30,7 @@ export class BarGraph extends PureComponent {
             <XAxis
               dataKey="name"
               interval={0}
-              tick={<CustomizedRotatedAxisTick />}
+              tick={<CustomizedRotatedAxisTick fontSize={15} />}
               height={50}
               maxChars={200}
               width={300}

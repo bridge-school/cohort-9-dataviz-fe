@@ -8,7 +8,8 @@ export const theme = {
     white: 'white',
     blue: 'rgb(0, 12, 158)',
     pink: 'rgb(235, 44, 151)',
-    green: 'rgb(8, 195, 157)'
+    green: 'rgb(8, 195, 157)',
+    biege: 'rgb(244, 244, 244)'
   }
 };
 
@@ -21,13 +22,24 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     * {
-        font: 100% "Open Sans", sans-serif;
+        font-family: "Open Sans", sans-serif;
         color: ${theme.color.text};
+    }
+
+    a {
+      text-decoration: none;
     }
 `;
 
 export const fontWeight = css`
   font-weight: ${props => (props.bold && 'bold') || (props.normal && 'normal')};
+`;
+
+export const textAlign = css`
+  text-align: ${props =>
+    (props.textCenter && 'center') ||
+    (props.textLeft && 'left') ||
+    (props.textRight && 'right')};
 `;
 
 export const display = css`
@@ -180,6 +192,13 @@ export const paddingLeft = css`
     (props.paddingLeftSmall && '10px')};
 `;
 
+export const marginBottom = css`
+  margin-bottom: ${props =>
+    (props.marginBottomLarge && '65px') ||
+    (props.marginBottomMedium && '25px') ||
+    (props.marginBottomSmall && '10px')};
+`;
+
 export const cursorStyle = css`
   cursor: ${props => props.pointer && 'pointer'};
 `;
@@ -209,9 +228,14 @@ export const SubHeader = styled.h2`
 export const Badge = styled.div`
   border-radius: 5px;
   background: ${theme.color.pink};
-  padding: 10px 20px;
+  padding: 15px 20px;
+  max-width: 250px;
+  margin: 0 auto;
   ${fontColor};
   ${fontSize};
+  ${fontWeight};
   ${flex};
   ${cursorStyle};
+  ${textAlign};
+  ${marginBottom};
 `;

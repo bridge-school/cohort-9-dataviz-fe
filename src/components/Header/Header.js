@@ -11,7 +11,7 @@ export const Header = () => {
       <Wrapper flex="space-between">
         <Wrapper bold white fontMedium flex align="center" row>
           <Link
-            to="/home"
+            to="/"
             label="Home"
             style={{ textDecoration: 'none', alignSelf: 'center' }}
           >
@@ -20,7 +20,7 @@ export const Header = () => {
           BridgeViz - Application Data Portal
         </Wrapper>
         <Link
-          to="/home"
+          to="/"
           label="Home"
           style={{ textDecoration: 'none', alignSelf: 'center' }}
         >
