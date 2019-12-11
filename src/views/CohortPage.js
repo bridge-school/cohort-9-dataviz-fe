@@ -1,78 +1,50 @@
 import React, { useEffect } from 'react';
-import { Route, useRouteMatch, useHistory, withRouter } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { withTheme } from 'styled-components';
+import isEmpty from 'lodash/isEmpty';
 
 import { Sidebar } from '../components/Sidebar/Sidebar';
-import { BarGraph } from '../components/Graphs/BarGraph';
-import { CohortPageStyle } from './CohortPageStyle';
+import { CohortPageStyle, NotificationStyle } from './CohortPageStyle';
 import { GraphSectionStyle } from './GraphSectionStyle';
 import { fetchSingleCohortData } from '../store/actions/singleCohort.actions';
-import { orderBars, sortDesc } from '../utils/order';
+import { GraphRoutes } from './GraphRoutes';
 
-const CohortPage = ({ theme }) => {
-  const history = useHistory();
-  const cohortID = history.location.pathname.split('/')[2];
-  const { path } = useRouteMatch();
+const renderView = (isPending, isFailure, cohort, cohortID) => {
+  if (isPending) {
+    return (
+      <NotificationStyle align="center" alignSelf="center" blue fontLarge>
+        Loading...
+      </NotificationStyle>
+    );
+  } else if (isFailure) {
+    return (
+      <NotificationStyle align="center" alignSelf="center" pink fontLarge>
+        Sorry, something went wrong. Please try again later.
+      </NotificationStyle>
+    );
+  } else if (!isEmpty(cohort)) {
+    return <GraphRoutes cohortID={cohortID} cohort={cohort} />;
+  }
+};
+
+export const CohortPage = () => {
+  const { url } = useRouteMatch();
+  const cohortID = url.split('/')[2];
   const dispatch = useDispatch();
   const cohort = useSelector(state => state.cohortData[`cohort-${cohortID}`]);
+  const isPending = useSelector(state => state.cohortData.isPending);
+  const isFailure = useSelector(state => state.cohortData.isFailure);
 
   useEffect(() => {
     if (!cohort) dispatch(fetchSingleCohortData(cohortID));
   }, [cohort, cohortID, dispatch]);
 
-  const renderGraphRoutes = () => (
-    <>
-      {/* Shows gender identity graph as the default */}
-      {/* TODO: redirect / to /gender-identity right away */}
-      <Route exact path={path}>
-        <BarGraph
-          title={`Cohort ${cohortID}: Gender Identity`}
-          data={cohort.gender}
-          fillColor={theme.color.green}
-        />
-      </Route>
-      <Route path={`${path}/gender-identity`}>
-        <BarGraph
-          title={`Cohort ${cohortID}: Gender Identity`}
-          data={cohort.gender}
-          fillColor={theme.color.green}
-        />
-      </Route>
-      <Route path={`${path}/minority-group`}>
-        <BarGraph
-          title={`Cohort ${cohortID}: Minority Groups`}
-          data={orderBars(cohort.minorityGroup, 'Prefer not to disclose')}
-          fillColor={theme.color.aqua}
-        />
-      </Route>
-      <Route path={`${path}/previous-bootcamp`}>
-        <BarGraph
-          title={`Cohort ${cohortID}: Previous Bootcamp`}
-          data={orderBars(
-            cohort.previousBootcamp,
-            'I have not attended a bootcamp'
-          )}
-          fillColor={theme.color.pink}
-        />
-      </Route>
-      <Route path={`${path}/employment-status`}>
-        <BarGraph
-          title={`Cohort ${cohortID}: Employment Status`}
-          data={sortDesc(cohort.employmentStatus)}
-          fillColor={theme.color.bluePurple}
-        />
-      </Route>
-    </>
-  );
-
   return (
     <CohortPageStyle grid>
       <Sidebar />
-
-      <GraphSectionStyle>{cohort && renderGraphRoutes()}</GraphSectionStyle>
+      <GraphSectionStyle>
+        {renderView(isPending, isFailure, cohort, cohortID)}
+      </GraphSectionStyle>
     </CohortPageStyle>
   );
 };
-
-export default withRouter(withTheme(CohortPage));
