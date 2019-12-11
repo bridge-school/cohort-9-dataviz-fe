@@ -17,6 +17,8 @@ const GraphRoutesComponent = ({ cohortID, cohort, theme }) => {
           title={`Cohort ${cohortID}: Gender Identity`}
           data={cohort.gender}
           fillColor={theme.color.green}
+          appliData={cohort.totalApplicants}
+          answData={cohort.applicantsAnswered.gender}
         />
       </Route>
       <Route path={`${path}/gender-identity`}>
@@ -24,6 +26,8 @@ const GraphRoutesComponent = ({ cohortID, cohort, theme }) => {
           title={`Cohort ${cohortID}: Gender Identity`}
           data={cohort.gender}
           fillColor={theme.color.green}
+          appliData={cohort.totalApplicants}
+          answData={cohort.applicantsAnswered.gender}
         />
       </Route>
       <Route path={`${path}/minority-group`}>
@@ -31,6 +35,8 @@ const GraphRoutesComponent = ({ cohortID, cohort, theme }) => {
           title={`Cohort ${cohortID}: Minority Groups`}
           data={orderBars(cohort.minorityGroup, 'Prefer not to disclose')}
           fillColor={theme.color.aqua}
+          appliData={cohort.totalApplicants}
+          answData={cohort.applicantsAnswered.minorityGroup}
         />
       </Route>
       <Route path={`${path}/previous-bootcamp`}>
@@ -41,6 +47,8 @@ const GraphRoutesComponent = ({ cohortID, cohort, theme }) => {
             'I have not attended a bootcamp'
           )}
           fillColor={theme.color.pink}
+          appliData={cohort.totalApplicants}
+          answData={cohort.applicantsAnswered.previousBootcamp}
         />
       </Route>
       <Route path={`${path}/employment-status`}>
@@ -48,6 +56,8 @@ const GraphRoutesComponent = ({ cohortID, cohort, theme }) => {
           title={`Cohort ${cohortID}: Employment Status`}
           data={sortDesc(cohort.employmentStatus)}
           fillColor={theme.color.bluePurple}
+          appliData={cohort.totalApplicants}
+          answData={cohort.applicantsAnswered.employmentStatus}
         />
       </Route>
     </>

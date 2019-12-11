@@ -1,7 +1,7 @@
 import { COHORTS } from '../actions/actions.type';
 
 export const INITIAL_STATE = {
-  cohortApplicants: {},
+  cohortApplicants: [],
   isPending: false,
   isFailure: false
 };
