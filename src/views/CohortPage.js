@@ -11,7 +11,7 @@ import { GraphRoutes } from './GraphRoutes';
 import isEmpty from 'lodash/isEmpty';
 
 const renderView = (isPending, isFailure, cohort, cohortID) => {
-  if (isPending || isEmpty(cohort)) {
+  if (isPending) {
     return (
       <NotificationStyle align="center" alignSelf="center" blue fontLarge>
         Loading...
