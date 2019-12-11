@@ -10,7 +10,7 @@ import { fetchSingleCohortData } from '../store/actions/singleCohort.actions';
 import { GraphRoutes } from './GraphRoutes';
 
 const renderView = (isPending, isFailure, cohort, cohortID) => {
-  if (isPending || isEmpty(cohort)) {
+  if (isPending) {
     return (
       <NotificationStyle align="center" alignSelf="center" blue fontLarge>
         Loading...
