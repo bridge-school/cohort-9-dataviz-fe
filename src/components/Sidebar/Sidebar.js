@@ -20,7 +20,7 @@ export const Sidebar = () => {
       </Link>
       <Link to={`${url}/previous-bootcamp`}>
         <Badge white fontSmall textCenter marginBottomMedium>
-          dev bootcamp
+          bootcamp experience
         </Badge>
       </Link>
 
